@@ -131,8 +131,8 @@
                                             <a href="page-account.html">
                                                 <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-user.svg') }}" />
                                             </a>
-                                            <a href="page-account.html"><span class="lable ml-0">Account</span></a>
-                                            <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                                            <a href="{{ route('login')}}"><span class="lable ml-0">Login</span></a>
+                                            <!-- <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                                 <ul>
                                                     <li>
                                                         <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
@@ -154,7 +154,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
