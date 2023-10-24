@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
 });
 
 //*****MY router started**** */
+
+//**admin*** */
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,8 +37,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('admin.dashboard');
+    Route::get('/admin/logout',[AdminController::class,'AdminDestroy'])->name('admin.logout');
 });
 
-
+Route::get('/admin/login', [AdminController::class, 'AdminLogin']);
 
 require __DIR__.'/auth.php';
