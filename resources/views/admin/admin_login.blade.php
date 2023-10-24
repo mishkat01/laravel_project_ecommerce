@@ -9,6 +9,9 @@
   <meta name="description" content=""/>
   <meta name="author" content=""/>
   <title>  Admin Login </title>
+  <link href="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
+" rel="stylesheet">
   <!--favicon-->
   
   <link rel="icon" href="{{asset('adminBackend/assets/images/favicon.ico')}}" type="image/x-icon">
@@ -97,6 +100,32 @@ name="password" class="form-control input-shadow" placeholder="Enter Password">
   <script src="{{asset('adminBackend/assets/js/jquery.min.js')}}"></script>
   <script src="{{asset('adminBackend/assets/js/popper.min.js')}}"></script>
   <script src="{{asset('adminBackend/assets/js/bootstrap.min.js')}}"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js
+"></script>
+
+<script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
   
 </body>
 

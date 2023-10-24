@@ -9,6 +9,9 @@
   <meta name="description" content=""/>
   <meta name="author" content=""/>
   <title> Admin Dashboard</title>
+  <link href="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
+" rel="stylesheet">
   <!--favicon-->
   <link rel="icon" href="{{asset('adminBackend/assets/images/favicon.ico')}}" type="image/x-icon">
   <!-- simplebar CSS-->
@@ -75,6 +78,34 @@
   <script src="{{asset('adminBackend/assets/plugins/peity/jquery.peity.min.js')}}"></script>
   <!-- Index js -->
   <script src="{{asset('adminBackend/assets/js/index3.js')}}"></script>
+
+  <script src="
+https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js
+"></script>
+
+<script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
+ 
   
 </body>
 
