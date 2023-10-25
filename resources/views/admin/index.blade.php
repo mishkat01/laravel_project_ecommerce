@@ -109,7 +109,8 @@
                 </div>
               </td>
               <td>Iphone 5</td>
-              <td><img src="assets/images/products/01.png" class="product-img" alt="product img"></td>
+			  {{asset ('dashboard/')}}
+              <td><img src="{{asset ('dashboard/assets/images/products/01.png')}}" class="product-img" alt="product img"></td>
               <td>#9405822</td>
               <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
               <td>$ 1250.00</td>
@@ -126,7 +127,7 @@
                 </div>
               </td>
               <td>Earphone GL</td>
-              <td><img src="assets/images/products/02.png" class="product-img" alt="product img"></td>
+              <td><img src="{{asset ('dashboard/assets/images/products/02.png')}}" class="product-img" alt="product img"></td>
               <td>#9405820</td>
               <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
               <td>$ 1500.00</td>
@@ -141,9 +142,9 @@
                   <input type="checkbox" id="check3"/>
                   <label for="check3"></label>
                 </div>
-              </td>
+              </td>{{asset ('dashboard/')}}
               <td>HD Hand Camera</td>
-              <td><img src="assets/images/products/03.png" class="product-img" alt="product img"></td>
+              <td><img src="{{asset ('dashboard/assets/images/products/03.png')}}" class="product-img" alt="product img"></td>
               <td>#9405830</td>
               <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
               <td>$ 1400.00</td>
@@ -160,7 +161,7 @@
                 </div>
               </td>
               <td>Clasic Shoes</td>
-              <td><img src="assets/images/products/04.png" class="product-img" alt="product img"></td>
+              <td><img src="{{asset ('dashboard/assets/images/products/04.png')}}" class="product-img" alt="product img"></td>
               <td>#9405825</td>
               <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
               <td>$ 1200.00</td>
@@ -177,7 +178,7 @@
                 </div>
               </td>
               <td>Hand Watch</td>
-              <td><img src="assets/images/products/05.png" class="product-img" alt="product img"></td>
+              <td><img src="{{asset ('dashboard/assets/images/products/05.png')}}" class="product-img" alt="product img"></td>
               <td>#9405840</td>
               <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
               <td>$ 1800.00</td>
@@ -194,7 +195,7 @@
                 </div>
               </td>
               <td>HD Hand Camera</td>
-              <td><img src="assets/images/products/03.png" class="product-img" alt="product img"></td>
+              <td><img src="{{asset ('dashboard/assets/images/products/03.png')}}" class="product-img" alt="product img"></td>
               <td>#9405830</td>
               <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
               <td>$ 1400.00</td>

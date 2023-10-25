@@ -27,7 +27,7 @@
       <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-layers"></i>
-          <span>UI Elements</span> <i class="fa fa-angle-left pull-right"></i>
+          <span>Product</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
         <li><a href="ui-checkbox-radio.html"><i class="zmdi zmdi-star-outline"></i> Checkboxes & Radios</a></li>
@@ -39,7 +39,7 @@
       </li>
       <li>
         <a href="javaScript:void();" class="waves-effect">
-          <i class="zmdi zmdi-gamepad"></i> <span>BS Cards</span>
+          <i class="zmdi zmdi-gamepad"></i> <span>Delivery</span>
           <i class="fa fa-angle-left float-right"></i>
         </a>
         <ul class="sidebar-submenu">
@@ -51,7 +51,7 @@
       </li>
       <li>
         <a href="javaScript:void();" class="waves-effect">
-          <i class="zmdi zmdi-cloud-done"></i> <span>Buttons</span>
+          <i class="zmdi zmdi-cloud-done"></i> <span>Slider</span>
           <i class="fa fa-angle-left float-right"></i>
         </a>
         <ul class="sidebar-submenu">
@@ -66,7 +66,7 @@
       <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-card-travel"></i>
-          <span>Components</span>
+          <span>Review</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
@@ -85,7 +85,7 @@
       </li>
       <li>
         <a href="javaScript:void();" class="waves-effect">
-          <i class="zmdi zmdi-chart"></i> <span>Charts</span>
+          <i class="zmdi zmdi-chart"></i> <span>Reports</span>
           <i class="fa fa-angle-left float-right"></i>
         </a>
         <ul class="sidebar-submenu">
