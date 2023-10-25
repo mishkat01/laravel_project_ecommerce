@@ -1,1 +1,9 @@
-kfs
+Envioronment setup-
+ 1.need to install composer in the working directory,in terminal type 'composer install'.
+ 2.check composer version with cmd "composer -v".
+ 3.go to php.in then remove or uncomment by removing ; in zip,sockets extention then restart apache server.
+ 
+
+Authentication with 'breeze'-
+    1.https://laravel.com/docs/10.x/starter-kits#introduction
+    2.

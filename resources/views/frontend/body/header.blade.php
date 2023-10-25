@@ -30,7 +30,7 @@
                                 <div class="header-info header-info-right">
                                     <ul>
 
-                        <li>
+                        <!-- <li>
                             <a class="language-dropdown-active" href="#">English <i class="fi-rs-angle-small-down"></i></a>
                             <ul class="language-dropdown">
                                 <li>
@@ -43,7 +43,7 @@
                                     <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/flag-ru.png') }}" alt="" />Pусский</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
 
@@ -57,7 +57,7 @@
                     <div class="container">
                         <div class="header-wrap" >
                             <div class="logo logo-width-1">
-                                <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                                <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo-1.png') }}" alt="logo" /></a>
                             </div>
             <div class="header-right">
                 <div class="search-style-2">
@@ -247,7 +247,7 @@
                                         <ul>
 
                                             <li>
-                                                <a class="active" href="index.html">Home  </a>
+                                                <a class="active" href="{{ url('/')}}">Home  </a>
 
                                             </li>
                                             <li>
@@ -405,7 +405,7 @@
 
                         <div class="hotline d-none d-lg-flex">
                             <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-headphone.svg') }}" alt="hotline" />
-                            <p>1900 - 888<span>24/7 Support Center</span></p>
+                            <p>0182-1587206<span>24/7 Support Center</span></p>
                         </div>
                         <div class="header-action-icon-2 d-block d-lg-none">
                             <div class="burger-icon burger-icon-white">
@@ -601,7 +601,7 @@
                                     <li><a href="page-404.html">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children">
+                            <!-- <li class="menu-item-has-children">
                                 <a href="#">Language</a>
                                 <ul class="dropdown">
                                     <li><a href="#">English</a></li>
@@ -609,7 +609,7 @@
                                     <li><a href="#">German</a></li>
                                     <li><a href="#">Spanish</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
