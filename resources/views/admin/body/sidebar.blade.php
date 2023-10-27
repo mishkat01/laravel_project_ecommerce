@@ -14,7 +14,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" class="waves-effect">
+        <a href="" class="waves-effect">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Brand</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
