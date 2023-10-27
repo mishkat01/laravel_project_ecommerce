@@ -18,10 +18,9 @@
           <i class="zmdi zmdi-view-dashboard"></i> <span>Brand</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><a href="index.html"><i class="zmdi zmdi-star-outline"></i> Dashboard v1</a></li>
-          <li><a href="index2.html"><i class="zmdi zmdi-star-outline"></i> Dashboard v2</a></li>
-          <li><a href="index3.html"><i class="zmdi zmdi-star-outline"></i> Dashboard v3</a></li>
-          <li><a href="index4.html"><i class="zmdi zmdi-star-outline"></i> Dashboard v4</a></li>
+          <li><a href="{{ route('all.brand')}}"><i class="zmdi zmdi-star-outline"></i>All Brand</a></li>
+          <li><a href="index2.html"><i class="zmdi zmdi-star-outline"></i>Add brand</a></li>
+         
         </ul>
       </li>
       <li>

@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\BrandController;
+
+
  
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +53,12 @@ Route::middleware(['auth'])->group(function(){
 
 });
 
+
+Route::middleware(['auth','role:admin'])->group(function(){
+
+Route::controller(BrandController::class)->group(function(){
+    //MY all brands
+    Route::get('/all/brand' , 'AllBrand')->name('all.brand');
+});
+});
 require __DIR__.'/auth.php';
