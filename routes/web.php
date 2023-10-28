@@ -59,6 +59,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 Route::controller(BrandController::class)->group(function(){
     //MY all brands
     Route::get('/all/brand' , 'AllBrand')->name('all.brand');
+    Route::get('/add/brand' , 'AddBrand')->name('add.brand');
 });
 });
 require __DIR__.'/auth.php';

@@ -19,7 +19,7 @@
         </a>
         <ul class="sidebar-submenu">
           <li><a href="{{ route('all.brand')}}"><i class="zmdi zmdi-star-outline"></i>All Brand</a></li>
-          <li><a href="index2.html"><i class="zmdi zmdi-star-outline"></i>Add brand</a></li>
+          <li><a href="{{ route('add.brand')}}"><i class="zmdi zmdi-star-outline"></i>Add brand</a></li>
          
         </ul>
       </li>
