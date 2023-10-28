@@ -9,6 +9,7 @@
   <meta name="description" content=""/>
   <meta name="author" content=""/>
   <title> Admin Dashboard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link href="
 https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
 " rel="stylesheet">
@@ -27,8 +28,8 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
   <!-- Custom Style-->
   <link href="{{asset('adminBackend/assets/css/app-style.css')}}" rel="stylesheet"/>
   <!-- data tables -->
-  <link href="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('adminBackend/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('adminBackend/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
   
 </head>
 
@@ -61,6 +62,36 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
 	<!--End footer-->
    
   </div><!--End wrapper-->
+
+
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/jszip.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/pdfmake.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/vfs_fonts.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.print.min.js')}}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js')}}"></script>
+
+    <script>
+     $(document).ready(function() {
+      //Default data table
+       $('#default-datatable').DataTable();
+
+
+       var table = $('#example').DataTable( {
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf', 'print', 'colvis' ]
+      } );
+ 
+     table.buttons().container()
+        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+      
+      } );
+
+    </script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{asset('adminBackend/assets/js/jquery.min.js')}}"></script>
@@ -110,34 +141,7 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js
 </script>
 
 <!-- data table -->
-<script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/jszip.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/pdfmake.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/vfs_fonts.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.print.min.js')}}"></script>
-  <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js')}}"></script>
 
-    <script>
-     $(document).ready(function() {
-      //Default data table
-       $('#default-datatable').DataTable();
-
-
-       var table = $('#example').DataTable( {
-        lengthChange: false,
-        buttons: [ 'copy', 'excel', 'pdf', 'print', 'colvis' ]
-      } );
- 
-     table.buttons().container()
-        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
-      
-      } );
-
-    </script>
  
   
 </body>
