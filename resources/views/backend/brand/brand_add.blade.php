@@ -57,7 +57,7 @@
                        <div class="form-group row">
                            <label class="col-lg-3 col-form-label form-control-label">brand Photo</label>
                            <div class="col-lg-9">
-                               <input class="form-control" type="file" id="image" name="brand_image">
+                               <input class="form-control" type="file" id="image" name="brand_image" !require>
                            </div>
                        </div>
 
