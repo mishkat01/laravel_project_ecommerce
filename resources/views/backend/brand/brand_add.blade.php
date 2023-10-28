@@ -35,7 +35,8 @@
               
             
                
-                   <form>
+                   <form method="post" action="{{ route('store.brand') }}" enctype="multipart/form-data">
+                   @csrf
                       
                        
 
@@ -56,7 +57,7 @@
                        <div class="form-group row">
                            <label class="col-lg-3 col-form-label form-control-label">brand Photo</label>
                            <div class="col-lg-9">
-                               <input class="form-control" type="file" id="image" class="brand_image">
+                               <input class="form-control" type="file" id="image" name="brand_image">
                            </div>
                        </div>
 
@@ -75,7 +76,7 @@
                            <label class="col-lg-3 col-form-label form-control-label"></label>
                            <div class="col-lg-9">
                                <input type="reset" class="btn btn-secondary" value="Cancel">
-                               <input type="button" class="btn btn-primary" value="Save Changes">
+                               <input type="submit" class="btn btn-primary" value="Save Changes">
                            </div>
                        </div>
                    </form>
