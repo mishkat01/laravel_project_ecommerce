@@ -14,7 +14,8 @@
 	   </div>
 	   <div class="col-sm-3">
        <div class="btn-group float-sm-right">
-        <button type="button" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add Brand</button>
+        <a href="{{ route('add.brand')}}">
+        <button type="button" class="btn btn-outline-dark waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add Brand</button></a>
         <!-- <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
         <span class="caret"></span>
         </button> -->

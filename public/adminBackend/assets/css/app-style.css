@@ -259,6 +259,7 @@ hr {
 #wrapper{
 	width:100%;
 	position: relative;
+
 }
 
 #sidebar-wrapper {
@@ -304,6 +305,8 @@ hr {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; 
+  background-color: rgb(230, 236, 247) !important;
+  height: 850px !important;
   }
   
 /* Topbar Header */   

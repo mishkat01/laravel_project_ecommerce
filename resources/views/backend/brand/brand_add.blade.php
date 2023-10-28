@@ -43,7 +43,7 @@
                        <div class="form-group row">
                            <label class="col-lg-3 col-form-label form-control-label">Brand Name</label>
                            <div class="col-lg-9">
-                               <input class="form-control" type="text" >
+                               <input class="form-control" type="text" name="brand_name" >
                            </div>
                        </div>
                    
@@ -56,7 +56,7 @@
                        <div class="form-group row">
                            <label class="col-lg-3 col-form-label form-control-label">brand Photo</label>
                            <div class="col-lg-9">
-                               <input class="form-control" type="file" id="image">
+                               <input class="form-control" type="file" id="image" class="brand_image">
                            </div>
                        </div>
 

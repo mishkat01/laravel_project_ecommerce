@@ -54,11 +54,11 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
     
     </div><!--End content-wrapper-->
    <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!-- <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a> -->
     <!--End Back To Top Button-->
 	
 	<!--Start footer-->
-	@include('admin.body.footer')
+	<!-- @include('admin.body.footer') -->
 	<!--End footer-->
    
   </div><!--End wrapper-->
