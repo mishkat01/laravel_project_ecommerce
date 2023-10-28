@@ -112,6 +112,9 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css
   <script src="{{asset('adminBackend/assets/plugins/peity/jquery.peity.min.js')}}"></script>
   <!-- Index js -->
   <script src="{{asset('adminBackend/assets/js/index3.js')}}"></script>
+  <!-- sweet alart -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <script src="{{ asset('adminBackend/assets/js/code.js') }}"></script>
 
   <script src="
 https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js
@@ -140,11 +143,10 @@ https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js
  @endif 
 </script>
 
-<!-- data table -->
+
 
  
   
 </body>
 
-<!-- Mirrored from codervent.com/rukada/color-admin/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Nov 2019 15:04:10 GMT -->
 </html>
