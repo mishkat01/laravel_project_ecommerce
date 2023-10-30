@@ -14,7 +14,7 @@
 	   </div>
 	   <div class="col-sm-3">
        <div class="btn-group float-sm-right">
-        <a href="{{ route('add.brand')}}">
+        <a href="{{ route('add.category')}}">
         <button type="button" class="btn btn-outline-dark waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add Category</button></a>
         <!-- <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
         <span class="caret"></span>
@@ -53,8 +53,8 @@
                         <td>{{$item->category_name}}</td>
                         <td><img src="{{ asset($item->category_image) }}" style="width:60px; height:40px;"></td>
                         <td>
-                            <a href="{{ route('edit.brand',$item->id) }}" class="btn btn-info">Edit</a>
-                            <a href="{{ route('delete.brand',$item->id) }}" class="btn btn-danger" id="deleteButton" >Delete</a>
+                            <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info">Edit</a>
+                            <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger" id="deleteButton" >Delete</a>
                         </td>
                    
                     </tr>
