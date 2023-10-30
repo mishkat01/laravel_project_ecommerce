@@ -16,4 +16,23 @@ class CategoryController extends Controller
     public function AddCategory(){
         return view('backend.category.category_add');
     }//end method
+    
+    public function StoreCategory(Request $request){
+        $image = $request->file('category_image');
+        $name_genarate = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(120,120)->save('uploads/category/'.$name_genarate);
+        $save_url = 'uploads/category/'.$name_genarate;
+ 
+        Category::insert([
+            'category_name' => $request->category_name,
+            'category_slug' => strtolower(str_replace(' ','-',$request->category_name)),
+            'category_image' => $save_url,
+        ]);
+        $notification = array (
+            'message' =>'Category Inserted Successfully',
+            'alert-type' =>'success'
+        );
+       
+        return redirect()->route('all.category')->with($notification);
+    }//end method
 }

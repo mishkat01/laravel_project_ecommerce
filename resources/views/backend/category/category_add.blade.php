@@ -35,7 +35,7 @@
               
             
                
-                   <form method="post" action="{{ route('store.brand') }}" enctype="multipart/form-data">
+                   <form method="post" action="{{ route('store.category') }}" enctype="multipart/form-data">
                    @csrf
                       
                        
