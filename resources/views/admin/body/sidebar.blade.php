@@ -26,13 +26,11 @@
       <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-layers"></i>
-          <span>Product</span> <i class="fa fa-angle-left pull-right"></i>
+          <span>Category</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-        <li><a href="ui-checkbox-radio.html"><i class="zmdi zmdi-star-outline"></i> Checkboxes & Radios</a></li>
-        <li><a href="ui-nav-tabs.html"><i class="zmdi zmdi-star-outline"></i> Nav Tabs</a></li>
-        <li><a href="ui-accordions.html"><i class="zmdi zmdi-star-outline"></i> Accordions</a></li>
-        <li><a href="ui-modals.html"><i class="zmdi zmdi-star-outline"></i> Modals</a></li>
+        <li><a href="{{route('all.category')}}"><i class="zmdi zmdi-star-outline"></i>All Category</a></li>
+        <li><a href="{{route('add.category')}}"><i class="zmdi zmdi-star-outline"></i>Add Category</a></li>
      
         </ul>
       </li>

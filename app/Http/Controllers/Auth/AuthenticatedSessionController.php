@@ -29,18 +29,22 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         ///******* MY auth logic******* */
-        $url="";
-        if($request->user()->role === 'admin'){
-            $url = 'admin/dashboard';
-        }elseif($request->user()->role === 'user'){
-            $url = '/dashboard';
-        }
+        // $url="";
         $notification = array (
             'message' =>'Login Successfully',
             'alert-type' =>'success'
         );
+        if($request->user()->role === 'admin'){
+            // $url = 'admin/dashboard';
+            return redirect('admin/dashboard')->with($notification);
+        }else{
+            // $url = '/dashboard';
+            return redirect('dashboard')->with($notification);
+        }
 
-        return redirect()->intended($url)->with($notification);
+      
+
+        // return redirect()->intended($url)->with($notification);
     }
 
     /**
