@@ -14,7 +14,7 @@
 	   </div>
 	   <div class="col-sm-3">
        <div class="btn-group float-sm-right">
-        <a href="{{ route('add.category')}}">
+        <a href="{{ route('add.subcategory')}}">
         <button type="button" class="btn btn-outline-dark waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add SubCategory</button></a>
         <!-- <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
         <span class="caret"></span>
@@ -51,7 +51,8 @@
                     @foreach($subcategories as $key=> $item)
                     <tr>
                         <td>{{$key+1}}</td>
-                        <td>{{$item->category_id}}</td>
+                        <!-- call the category relationship function then access category table fields -->
+                        <td>{{$item['category']['category_name']}}</td>
                         <td>{{$item->subcategory_name}}</td>
                         <td>
                             <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info">Edit</a>
