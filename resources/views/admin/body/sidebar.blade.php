@@ -40,8 +40,8 @@
           <i class="fa fa-angle-left float-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><a href="cards-image-cards.html"><i class="zmdi zmdi-star-outline"></i> Image Cards</a></li>
-          <li><a href="cards-text-cards.html"><i class="zmdi zmdi-star-outline"></i> Text Cards</a></li>
+          <li><a href="{{route('all.subcategory')}}"><i class="zmdi zmdi-star-outline"></i>All SubCategory</a></li>
+          <li><a href="{{route('add.subcategory')}}"><i class="zmdi zmdi-star-outline"></i>Add SubCategory</a></li>
         </ul>
       </li>
       <li>
