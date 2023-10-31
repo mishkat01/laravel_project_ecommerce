@@ -109,7 +109,7 @@
                 </div>
               </td>
               <td>Iphone 5</td>
-			  {{asset ('dashboard/')}}
+			 
               <td><img src="{{asset ('dashboard/assets/images/products/01.png')}}" class="product-img" alt="product img"></td>
               <td>#9405822</td>
               <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
@@ -142,7 +142,7 @@
                   <input type="checkbox" id="check3"/>
                   <label for="check3"></label>
                 </div>
-              </td>{{asset ('dashboard/')}}
+              </td>
               <td>HD Hand Camera</td>
               <td><img src="{{asset ('dashboard/assets/images/products/03.png')}}" class="product-img" alt="product img"></td>
               <td>#9405830</td>
