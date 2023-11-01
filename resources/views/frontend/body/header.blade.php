@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
 
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
 
 
@@ -49,7 +50,7 @@
 .btn {
     display: inline-block;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 0;
     color: #212529;
     text-align: center;
     text-decoration: none;
@@ -137,7 +138,7 @@
                                             <div class="header-right">
                                
                               <div class="input-group"> <input type="search" name="q" id="search" class="form-control search-input" autocomplete="off" placeholder="Enter Your Keyword..."> 
-                                 <button class="btn search-btn" type="submit" aria-label="Search"><i class="fas fa-search"></i>
+                                 <button class="btn search-btn" type="submit" aria-label="Search">Search!
                                  </button>
                              </div>
                               <div class="header-action-right">
