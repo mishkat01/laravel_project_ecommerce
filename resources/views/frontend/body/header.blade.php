@@ -132,7 +132,7 @@
 
                 <!-- header - middle - start -->
                      <div class="header-middle header-middle-ptb-1 d-none d-lg-block sticky-bar" style="background-color:black;">
-                            <div class="container" style="margin:0; padding:0;">
+                            <div class="" style="margin:0; padding:0; ">
                                 <div class="header-wrap" >
                                     <div class="logo logo-width-1">
                                         <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo-1.svg') }}" alt="logo" /></a>
