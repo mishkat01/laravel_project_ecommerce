@@ -22,7 +22,7 @@
 <section class="product-tabs section-padding position-relative">
             <div class="container">
                 <div class="section-title style-2 wow animate__animated animate__fadeIn">
-                     <div class="heading-box">Laptops</div>
+                     <div class="heading-box">Desktop</div>
 
                         <div class="heading-line"></div>
                    
@@ -36,8 +36,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/shop/product-1-1.jpg') }}" alt="" />
-                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/shop/product-1-2.jpg') }}" alt="" />
+                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/ryns/processor.jpg') }}" alt="" />
+                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/ryns/processor.jpg') }}" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -51,9 +51,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Snack</a>
+                                            <a href="shop-grid-right.html">MOBO</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a></h2>
+                                        <h2><a href="shop-product-right.html">Processor</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 90%"></div>
@@ -61,7 +61,7 @@
                                             <span class="font-small ml-5 text-muted"> (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">NestFood</a></span>
+                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">Intel</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -81,8 +81,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/shop/product-2-1.jpg') }}" alt="" />
-                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/shop/product-2-2.jpg') }}" alt="" />
+                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/ryns/full-pc.png') }}" alt="" />
+                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/ryns/full-pc.png') }}" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -96,9 +96,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Hodo Foods</a>
+                                            <a href="shop-grid-right.html">Ryzen</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a></h2>
+                                        <h2><a href="shop-product-right.html">Desktop</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -126,8 +126,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/shop/product-3-1.jpg') }}" alt="" />
-                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/shop/product-3-2.jpg') }}" alt="" />
+                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/ryns/casing.png') }}" alt="" />
+                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/ryns/casing.png') }}" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -141,9 +141,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Snack</a>
+                                            <a href="shop-grid-right.html">case</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a></h2>
+                                        <h2><a href="shop-product-right.html">Antec Case</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 85%"></div>
@@ -151,7 +151,7 @@
                                             <span class="font-small ml-5 text-muted"> (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">StarKist</a></span>
+                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">antex</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -171,8 +171,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/shop/product-4-1.jpg') }}" alt="" />
-                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/shop/product-4-2.jpg') }}" alt="" />
+                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/ryns/mobo.png') }}" alt="" />
+                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/ryns/mobo.png') }}" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -183,9 +183,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Vegetables</a>
+                                            <a href="shop-grid-right.html">MSI</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a></h2>
+                                        <h2><a href="shop-product-right.html">MotherBoard</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 90%"></div>
@@ -193,7 +193,7 @@
                                             <span class="font-small ml-5 text-muted"> (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">NestFood</a></span>
+                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">MSI</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -213,8 +213,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/shop/product-5-1.jpg') }}" alt="" />
-                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/shop/product-5-2.jpg') }}" alt="" />
+                                                <img class="default-img" src="{{ asset('frontend/assets/imgs/ryns/cooler.png') }}" alt="" />
+                                                <img class="hover-img" src="{{ asset('frontend/assets/imgs/ryns/cooler.png') }}" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -228,9 +228,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Pet Foods</a>
+                                            <a href="shop-grid-right.html">MSI</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a></h2>
+                                        <h2><a href="shop-product-right.html">GPU</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 90%"></div>
@@ -238,7 +238,7 @@
                                             <span class="font-small ml-5 text-muted"> (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">NestFood</a></span>
+                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">MSI</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">

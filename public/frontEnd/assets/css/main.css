@@ -486,43 +486,43 @@ input[type="number"]:focus,
 }
 
 .bg-7 {
-    background-color: #d77f7a !important;
+    background-color: white !important;
 }
 
 .bg-8 {
-    background-color: #63a2c1 !important;
+    background-color: white !important;
 }
 
 .bg-9 {
-    background-color: #f2fce4 !important;
+    background-color: white !important;
 }
 
 .bg-10 {
-    background-color: #fffceb !important;
+    background-color: white !important;
 }
 
 .bg-11 {
-    background-color: #ecffec !important;
+    background-color: white !important;
 }
 
 .bg-12 {
-    background-color: #feefea !important;
+    background-color: white !important;
 }
 
 .bg-13 {
-    background-color: #fff3eb !important;
+    background-color: white !important;
 }
 
 .bg-14 {
-    background-color: #fff3ff !important;
+    background-color: white !important;
 }
 
 .bg-15 {
-    background-color: #f2fce4 !important;
+    background-color: white !important;
 }
 
 .bg-grey-9 {
-    background-color: #f4f5f9 !important;
+    background-color: white !important;
 }
 
 .font-xs {
@@ -2461,13 +2461,13 @@ input.qty-val {
 
 .card-2 {
     position: relative;
-    background: #f4f6fa;
+    background: #c00d0d;
     text-align: center;
     border: 1px solid #f4f6fa;
     border-radius: 0px;;
     padding: 20px 0px 18px 0px;
-    margin-bottom: 20px;
-    min-height: 180px;
+    margin-bottom: 0px;
+    min-height: 100px;
     -webkit-transition: 0.2s;
     transition: 0.2s;
 }

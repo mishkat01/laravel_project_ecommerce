@@ -20,7 +20,7 @@
 </style>
 
 @include('frontend.home.home_new_products')
-@include('frontend.home.home_product_2')
+@include('frontend.home.home_new_products')
         <!--Products Tabs-->
 
 
