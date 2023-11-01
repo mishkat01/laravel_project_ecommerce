@@ -338,11 +338,11 @@ input[type="number"]:focus,
 }
 
 .border-radius-10 {
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .border-radius-15 {
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .border-radius-20 {
@@ -1167,7 +1167,7 @@ button[type="submit"] {
     border: none;
     background-color: #72bf44;
     border: 1px solid #29a56c;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 button.submit:hover,
@@ -1350,7 +1350,7 @@ textarea:-ms-input-placeholder {
 
 input {
     border: 1px solid #ececec;
-    border-radius: 10px;
+    border-radius: 0px;;
     height: 64px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -1391,7 +1391,7 @@ option {
 
 textarea {
     border: 1px solid #ececec;
-    border-radius: 10px;
+    border-radius: 0px;;
     height: 50px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -1552,7 +1552,7 @@ textarea:focus {
     color: #ffffff;
     border: none;
     background-color: #253d4e;
-    border-radius: 10px;
+    border-radius: 0px;;
     font-family: "Quicksand", sans-serif;
 }
 
@@ -1586,7 +1586,7 @@ label {
 
 .security-code {
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 0px;;
     height: 64px;
     line-height: 64px;
     padding: 0 40px;
@@ -1727,7 +1727,7 @@ label {
 .comments-area .comment-list .single-comment {
     margin: 0 0 15px 0;
     border: 1px solid #f2f2f2;
-    border-radius: 15px;
+    border-radius: 0px;
     padding: 20px;
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1814,7 +1814,7 @@ label {
 
 .form-control {
     border: 1px solid #f0e9ff;
-    border-radius: 10px;
+    border-radius: 0px;;
     height: 48px;
     padding-left: 18px;
     font-size: 16px;
@@ -2089,11 +2089,11 @@ input.qty-val {
 }
 
 .hero-slider-1.style-5 img {
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .hero-slider-1.style-5 .single-hero-slider {
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .dot-style-1 ul {
@@ -2419,7 +2419,7 @@ input.qty-val {
     background: #f4f6fa;
     text-align: center;
     border: 1px solid #f4f6fa;
-    border-radius: 10px;
+    border-radius: 0px;;
     padding: 40px 30px 28px 30px;
     margin-bottom: 20px;
     min-height: 215px;
@@ -2442,7 +2442,7 @@ input.qty-val {
 }
 
 .card-1 figure img {
-    border-radius: 10px;
+    border-radius: 0px;;
     display: inline-block;
     max-width: 80px;
 }
@@ -2464,7 +2464,7 @@ input.qty-val {
     background: #f4f6fa;
     text-align: center;
     border: 1px solid #f4f6fa;
-    border-radius: 10px;
+    border-radius: 0px;;
     padding: 20px 0px 18px 0px;
     margin-bottom: 20px;
     min-height: 180px;
@@ -2487,7 +2487,7 @@ input.qty-val {
 }
 
 .card-2 figure img {
-    border-radius: 10px;
+    border-radius: 0px;;
     display: inline-block;
     max-width: 80px;
 }
@@ -2509,7 +2509,7 @@ input.qty-val {
     position: relative;
     background: #fff;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0px;;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border: 1px solid #eee;
@@ -2582,7 +2582,7 @@ input.qty-val {
 
 .featured-card {
     padding: 50px 30px;
-    border-radius: 15px;
+    border-radius: 0px;
     border: 1px solid #ececec;
     background: #fff;
 }
@@ -2615,7 +2615,7 @@ input.qty-val {
 }
 
 .team-card img {
-    border-radius: 15px;
+    border-radius: 0px;
     z-index: 1;
 }
 
@@ -2629,7 +2629,7 @@ input.qty-val {
 .team-card .content {
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 15px;
+    border-radius: 0px;
     background: #fff;
     padding: 30px;
     max-width: 80%;
@@ -2678,7 +2678,7 @@ input.qty-val {
 
 .card-login {
     padding: 50px;
-    border-radius: 15px;
+    border-radius: 0px;
     border: 1px solid #ececec;
     margin-left: 30px;
 }
@@ -2695,7 +2695,7 @@ input.qty-val {
     align-items: center;
     width: 100%;
     padding: 15px 25px;
-    border-radius: 10px;
+    border-radius: 0px;;
     margin-bottom: 20px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -2811,9 +2811,9 @@ input.qty-val {
 
 .dashboard-menu ul li {
     position: relative;
-    border-radius: 10px;
+    border-radius: 0px;;
     border: 1px solid #ececec;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .dashboard-menu ul li a {
@@ -2833,7 +2833,7 @@ input.qty-val {
 .dashboard-menu ul li a.active {
     color: #fff;
     background-color: #b73b8e;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .dashboard-menu ul li a.active i {
@@ -3010,7 +3010,7 @@ input.qty-val {
     height: 10px;
     background: #ff0000;
     opacity: 0;
-    border-radius: 10px;
+    border-radius: 0px;;
     -webkit-animation: slideleft 3s ease-in-out infinite;
     animation: slideleft 3s ease-in-out infinite;
 }
@@ -3521,7 +3521,7 @@ table .product-thumbnail img {
     position: relative;
     background: #f4f6fa;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .banner-left-icon:hover .banner-icon {
@@ -3559,12 +3559,12 @@ table .product-thumbnail img {
 .banner-img {
     position: relative;
     clear: both;
-    border-radius: 10px;
+    border-radius: 0px;;
     overflow: hidden;
 }
 
 .banner-img img {
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .banner-img:hover img {
@@ -3577,7 +3577,7 @@ table .product-thumbnail img {
 
 .banner-img.banner-1.home-3 {
     margin-bottom: 24px;
-    border-radius: 10px;
+    border-radius: 0px;;
     overflow: hidden;
     max-height: 348px;
 }
@@ -3624,7 +3624,7 @@ table .product-thumbnail img {
 }
 
 .banner-img.style-2 {
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
     height: 520px;
     background: url(../imgs/banner/banner-4.png) no-repeat center bottom;
@@ -3639,7 +3639,7 @@ table .product-thumbnail img {
 }
 
 .banner-img.style-3 {
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
     height: 538px;
     background: url(../imgs/banner/banner-11.png) no-repeat center bottom;
@@ -3955,7 +3955,7 @@ table .product-thumbnail img {
     position: relative;
     color: #fff;
     background: url(../imgs/page/about-9.png) no-repeat center center;
-    border-radius: 15px;
+    border-radius: 0px;
     padding: 100px 0;
     overflow: hidden;
 }
@@ -4054,7 +4054,7 @@ table .product-thumbnail img {
     position: relative;
     background-color: #fff;
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
     transition: 0.2s;
     -moz-transition: 0.2s;
@@ -4089,7 +4089,7 @@ table .product-thumbnail img {
 .product-cart-wrap .product-img-action-wrap .product-img {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .product-cart-wrap .product-img-action-wrap .product-img a {
@@ -4278,7 +4278,7 @@ table .product-thumbnail img {
     display: inline-block;
     font-size: 12px;
     line-height: 1;
-    border-radius: 15px 0 20px 0;
+    border-radius: 0px;
     color: #fff;
     padding: 9px 20px 10px 20px;
 }
@@ -4584,7 +4584,7 @@ table .product-thumbnail img {
 }
 
 .product-cart-wrap.style-2 .product-img-action-wrap img {
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .product-cart-wrap.style-2 .product-content-wrap {
@@ -4604,7 +4604,7 @@ table .product-thumbnail img {
 .product-cart-wrap.style-2 .product-content-wrap .deals-content {
     margin: 0 auto;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 0px;;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     padding: 25px 30px;
@@ -4643,7 +4643,7 @@ table .product-thumbnail img {
 }
 
 .product-list-small figure img {
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .product-list-small .product-price {
@@ -4830,7 +4830,7 @@ table .product-thumbnail img {
     border: 1px solid #f7f8f9;
     color: #777;
     padding: 9px 16px;
-    border-radius: 10px;
+    border-radius: 0px;;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     cursor: pointer;
@@ -4990,7 +4990,7 @@ table .product-thumbnail img {
 
 .product-list .product-cart-wrap .product-img-action-wrap .product-img {
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .product-list
@@ -5098,7 +5098,7 @@ table .product-thumbnail img {
 
 .slider-nav-thumbnails .slick-slide {
     position: relative;
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
 }
 
@@ -5446,7 +5446,7 @@ table .product-thumbnail img {
 
 .product-info {
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
     padding: 40px 50px;
 }
 
@@ -5511,7 +5511,7 @@ table .product-thumbnail img {
 .detail-gallery .product-image-slider {
     background-color: #fff;
     margin-bottom: 30px;
-    border-radius: 15px;
+    border-radius: 0px;
     border: 1px solid #ececec;
     overflow: hidden;
 }
@@ -5738,7 +5738,7 @@ table .product-thumbnail img {
 .shopping-summery table tbody tr img {
     max-width: 120px;
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 table.no-border td,
@@ -5755,7 +5755,7 @@ table.no-border thead {
     .custom_select
     .select2-container--default
     .select2-selection--single {
-    border-radius: 10px;
+    border-radius: 0px;;
     height: 64px;
     line-height: 64px;
 }
@@ -5785,7 +5785,7 @@ table.no-border thead {
 }
 
 .cart-totals {
-    border-radius: 15px;
+    border-radius: 0px;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     padding: 30px 40px;
@@ -5794,13 +5794,13 @@ table.no-border thead {
 .order_review {
     border: 1px solid #ececec;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .toggle_info {
     padding: 12px 20px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 0px;;
     border: 1px solid #ececec;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -5811,7 +5811,7 @@ table.no-border thead {
     border: 1px solid #ececec;
     padding: 30px;
     margin-top: 30px;
-    border-radius: 10px;
+    border-radius: 0px;;
 }
 
 .payment_option .custome-radio {
@@ -5864,7 +5864,7 @@ table.no-border thead {
 }
 
 .zoomWindow {
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
 }
 
@@ -5880,7 +5880,7 @@ table.no-border thead {
 
 .apply-coupon input {
     height: 51px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0px; 0 0 10px;
     background-image: url("../imgs/theme/icons/coupon.png");
     background-position: 20px center;
     background-repeat: no-repeat;
@@ -5900,7 +5900,7 @@ table.no-border thead {
 
 .order_table table .product-thumbnail img {
     max-width: 120px;
-    border-radius: 15px;
+    border-radius: 0px;
     border: 1px solid #ececec;
     padding: 5px;
 }
@@ -5910,7 +5910,7 @@ table.no-border thead {
 }
 
 .table.table-compare {
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .table.table-compare > :not(caption) > * > * {
@@ -6054,7 +6054,7 @@ table.no-border thead {
 .single-content blockquote {
     background-color: #f4f6fa;
     padding: 40px 60px;
-    border-radius: 15px;
+    border-radius: 0px;
     margin: 30px auto;
     font-size: 24px;
     max-width: 80%;
@@ -6105,7 +6105,7 @@ table.no-border thead {
 }
 
 .single-thumbnail img {
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
 }
 
@@ -6133,7 +6133,7 @@ table.no-border thead {
 }
 
 .author-bio {
-    border-radius: 15px;
+    border-radius: 0px;
     border: 1px solid #ececec;
 }
 
@@ -6333,7 +6333,7 @@ h6.post-title {
     -ms-flex-align: center;
     align-items: center;
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .loop-grid.loop-list article:not(:last-child) {
@@ -6937,7 +6937,7 @@ h6.post-title {
 }
 
 .invoice-6 .invoice-info {
-    border-radius: 10px;
+    border-radius: 0px;;
     border: 1px solid #bce3c9;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -6953,7 +6953,7 @@ h6.post-title {
     background-color: #f7f8f9;
     padding: 80px 150px 50px 150px;
     margin-bottom: 50px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0px; 10px 0 0;
 }
 
 .invoice-6 .invoice-icon {
@@ -7006,7 +7006,7 @@ h6.post-title {
     position: relative;
     background-color: #fff;
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
     overflow: hidden;
     transition: 0.2s;
     -moz-transition: 0.2s;
@@ -7645,7 +7645,7 @@ h6.post-title {
     visibility: hidden;
     -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    border-radius: 10px;
+    border-radius: 0px;;
     border: 1px solid #ececec;
 }
 
@@ -8998,7 +8998,7 @@ span.fi-rs-apps {
     opacity: 0;
     visibility: hidden;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 0px;;
     z-index: 999;
     border: 1px solid #ececec;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -9027,7 +9027,7 @@ span.fi-rs-apps {
     transition: all 0.25s ease 0s;
     opacity: 0;
     visibility: hidden;
-    border-radius: 10px;
+    border-radius: 0px;;
     margin-top: 20px;
     border: 1px solid #ececec;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -9472,7 +9472,7 @@ span.fi-rs-apps {
     padding: 30px;
     background: #fff;
     border: 1px solid #bce3c9;
-    border-radius: 10px;
+    border-radius: 0px;;
     font-size: 16px;
     min-width: 270px;
     -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -9709,7 +9709,7 @@ span.fi-rs-apps {
 
 .categories-dropdown-wrap.style-2 {
     border: 1px solid #bce3c9;
-    border-radius: 10px;
+    border-radius: 0px;;
     padding: 30px;
 }
 
@@ -9838,7 +9838,7 @@ span.fi-rs-apps {
     position: relative;
     padding: 30px;
     border: 1px solid #ececec;
-    border-radius: 15px;
+    border-radius: 0px;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
@@ -12641,7 +12641,7 @@ footer .hotline img {
     }
     .single-content blockquote {
         padding: 20px 30px;
-        border-radius: 15px;
+        border-radius: 0px;
         margin: 20px auto;
         font-size: 16px;
         max-width: 100%;

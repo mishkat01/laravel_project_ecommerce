@@ -1,11 +1,30 @@
-<section class="popular-categories section-padding">
+<style>
+     
+
+      .heading-box {
+        background-color: rgb(17, 17, 17);
+        padding: 8px;
+        color: white;
+        margin: 0;
+        width: 300px;
+        font-size: 15px;
+      }
+
+      .heading-line {
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        margin: 0;
+      }
+    </style>
+
+
+<section class="popular-categories section-padding" style="background-color:white">
             <div class="container wow animate__animated animate__fadeIn">
                 <div class="section-title">
-                    <div class="title">
-                        <h3>Top Categories</h3>
+                    <div class="heading-box">Top Category</div>
 
-                    </div>
-                    <div class="slider-arrow slider-arrow-2 flex-right carausel-10-columns-arrow" id="carausel-10-columns-arrows"></div>
+                    <div class="heading-line"></div>
                 </div>
                 <div class="carausel-10-columns-cover position-relative">
                     <div class="carausel-10-columns" id="carausel-10-columns">

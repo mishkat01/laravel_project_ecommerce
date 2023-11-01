@@ -64,6 +64,8 @@
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     border-radius: 0.25rem;
+    border-top-right-radius: 10px!important;
+    border-bottom-right-radius: 10px!important;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 </style>
