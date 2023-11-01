@@ -6,8 +6,8 @@
             <div class="container">
                 <div class="home-slide-cover mt-30">
                     <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                        <div class="single-hero-slider single-animation-wrap" style="background-image: url({{ asset('frontend/assets/imgs/slider/slider-1.png') }})">
-                            <div class="slider-content">
+                        <div class="single-hero-slider single-animation-wrap" style="background-image: url({{ asset('frontend/assets/imgs/slider/slider-1.jpg') }})">
+                            <!-- <div class="slider-content">
                                 <h1 class="display-2 mb-40">
                                     Don’t miss amazing<br />
                                     grocery deals
@@ -17,10 +17,10 @@
                                     <input type="email" placeholder="Your emaill address" />
                                     <button class="btn" type="submit">Subscribe</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="single-hero-slider single-animation-wrap" style="background-image: url({{ asset('frontend/assets/imgs/slider/slider-2.png') }})">
-                            <div class="slider-content">
+                        <div class="single-hero-slider single-animation-wrap" style="background-image: url({{ asset('frontend/assets/imgs/slider/slider-2.jpg') }})">
+                            <!-- <div class="slider-content">
                                 <h1 class="display-2 mb-40">
                                     Fresh Vegetables<br />
                                     Big discount
@@ -30,7 +30,7 @@
                                     <input type="email" placeholder="Your emaill address" />
                                     <button class="btn" type="submit">Subscribe</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="slider-arrow hero-slider-1-arrow"></div>
@@ -42,7 +42,7 @@
             <div class="container wow animate__animated animate__fadeIn">
                 <div class="section-title">
                     <div class="title">
-                        <h3>Featured Categories</h3>
+                        <h3>Top Categories</h3>
 
                     </div>
                     <div class="slider-arrow slider-arrow-2 flex-right carausel-10-columns-arrow" id="carausel-10-columns-arrows"></div>

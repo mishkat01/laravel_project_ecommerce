@@ -1,5 +1,5 @@
 <footer class="main">
-        <section class="newsletter mb-15 wow animate__animated animate__fadeIn">
+        <!-- <section class="newsletter mb-15 wow animate__animated animate__fadeIn">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="featured section-padding">
             <div class="container">
                 <div class="row">
@@ -99,7 +99,7 @@
                     <div class="col">
                         <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp" data-wow-delay="0">
                             <div class="logo mb-30">
-                                <a href="index.html" class="mb-15"><img src="{{ asset('frontend/assets/imgs/theme/logo-2.jpg') }}" alt="logo" /></a>
+                                <a href="index.html" class="mb-15"><img src="{{ asset('frontend/assets/imgs/theme/logo-1.svg') }}" alt="logo" /></a>
                                 <p class="font-lg text-heading">All things in one Place</p>
                             </div>
                             <!-- <ul class="contact-infor">
