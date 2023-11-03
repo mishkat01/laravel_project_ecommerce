@@ -35,10 +35,10 @@
               
             
                
-                   <form method="post" action="{{ route('store.subcategory') }}">
+                   <form method="post" action="{{ route('update.subcategory') }}">
                    @csrf
                       
-                       
+                       <input type="hidden" name="id" value="{{ $subcategory->id}}">
 
                 
                        <div class="form-group row">
@@ -59,7 +59,8 @@
                            <div class="col-lg-9">
                            <select class="form-control valid" id="input-7" name="category_id" required="" aria-invalid="false">
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category-> category_name }}</option>
+                        {{-- MY view logic --}}
+                        <option value="{{ $category->id }}"  {{$category->id ==$subcategory->category_id ? 'selected' : '' }}>{{ $category-> category_name }}</option>
                         @endforeach
                     
                     </select>
