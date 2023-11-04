@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 
  
@@ -88,6 +89,16 @@ Route::controller(BrandController::class)->group(function(){
         Route::post('/update/subcategory' , 'UpdateSubCategory')->name('update.subcategory');
         Route::get('/delete/subcategory/{id}' , 'DeleteSubCategory')->name('delete.subcategory');
     });
+
+          //MY Product
+          Route::controller(ProductController::class)->group(function(){
+            Route::get('/all/product' , 'AllProduct')->name('all.product');
+            Route::get('/add/product' , 'AddProduct')->name('add.product');
+            // Route::post('/store/subcategory' , 'StoreSubCategory')->name('store.subcategory');
+            // Route::get('/edit/subcategory/{id}' , 'EditSubCategory')->name('edit.subcategory');
+            // Route::post('/update/subcategory' , 'UpdateSubCategory')->name('update.subcategory');
+            // Route::get('/delete/subcategory/{id}' , 'DeleteSubCategory')->name('delete.subcategory');
+        });
 
 });
 require __DIR__.'/auth.php';
