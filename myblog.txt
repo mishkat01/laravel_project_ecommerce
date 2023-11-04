@@ -1,3 +1,35 @@
+basics-
+    1) ::
+    :: 
+    In Laravel, the :: symbol is used to access static methods or properties of a class. It's called the scope resolution operator. When you see ClassName::method() or ClassName::$property, it means you are referencing a static method or property of the class ClassName.
+    2)
+    In Laravel, => is an assignment operator used to create an associative array. It is used to assign a value to a specific key in an array. For example, consider the following code snippet:
+
+    $myArray = [
+        'name' => 'John',
+        'age' => 25,
+        'gender' => 'Male'
+    ];
+    Here, name, age, and gender are keys, and John, 25, and Male are their corresponding values. The => operator is used to assign these values to their respective keys.
+
+    On the other hand, -> is an access operator used to access an object's properties and methods. For example:
+
+    $user = new User();
+    $user->name = 'John';
+    $user->age = 25;
+    $user->gender = 'Male';
+    Here, name, age, and gender are properties of the User object, and -> is used to access and assign values to these properties.
+    3)what protected $guarded =[]; used in laravel model?
+    $guarded is a property in Laravel's Eloquent ORM that is used to protect against mass assignment vulnerabilities. When $guarded is set to an empty array, it means that no fields are guarded and all fields are mass assignable .
+
+    Mass assignment is a technique in Laravel that allows you to assign an array of data to a model's attributes at once 1. This can be useful when you need to update multiple fields in a model at once. However, this can also be a security risk if you allow users to submit data that you don't want to be updated .
+
+    By default, Laravel uses $fillable to specify which fields can be mass assigned 2. If you don't specify $fillable, Laravel will use $guarded to determine which fields cannot be mass assigned .
+    
+
+
+
+
 Envioronment setup-
  1.need to install composer in the working directory,in terminal type 'composer install'.
  2.check composer version with cmd "composer -v".
@@ -13,3 +45,85 @@ Authentication with 'breeze'-
         npm run dev
         
         The default Breeze "stack" is the Blade stack, which utilizes simple Blade templates to render your application's frontend. 
+
+make model with migration-
+    php artisan make:model Product -m
+
+
+        laravel most used methods-
+    1) compact() :
+    compact() creates an array from existing variables given as string arguments to it.
+
+    $brands = Brand::latest()->get();
+            return view('backend.brand.brand_all',compact('brands'));
+
+
+    2)with() :
+    So with() allows you to pass variables to a view
+
+    $notification = array (
+                'message' =>'Brand Inserted Successfully',
+                'alert-type' =>'success'
+            );
+        
+            return redirect()->route('all.brand')->with($notification);
+
+    3)file() :
+    file() method is a built-in function in Laravel that allows you to handle uploaded files. When a file is uploaded via a form, it is sent as a POST request to the server. The file() method is used to retrieve the uploaded file from the request object.
+
+    public function upload(Request $request)
+    {
+        $file = $request->file('file');
+        // Do something with the file
+    }
+
+    4) 
+    5)getClientOriginalExtension() :
+    is a method in Laravel that returns the file extension of the uploaded file. It is commonly used to validate the file type before storing it in the database or file system.
+
+    public function store(Request $request)
+    {
+        $file = $request->file('file');
+        $extension = $file->getClientOriginalExtension();
+        // ...
+    }
+
+    6)save() :
+    The save() method in Laravel is used to persist a new model instance into the database or update an existing one 1. When you create a new model instance, the save() method performs an INSERT operation to add the new record to the database table 2. If the model instance already exists in the database, the save() method performs an UPDATE operation to modify the existing record 2.
+
+    7)findOrFail():
+
+    findOrFail() is a method in Laravel's Eloquent ORM that retrieves a record by its primary key and throws an exception if the record is not found. This method is useful when you want to return a 404 error page if the record is not found.
+
+    Here's an example of how to use findOrFail() in a controller:
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('users.show', compact('user'));
+    }
+
+    8)file_exists () :
+    The file_exists method in Laravel is used to check if a file exists at a given path. It returns true if the file exists and false otherwise. Here is an example of how to use it:
+
+    if (file_exists($path)) {
+        // Do something
+    } else {
+        // Do something else
+    }
+
+    9) unlink():
+    In Laravel, the unlink() method is used to delete a file from the server's file system. It requires the file path as an argument and returns a boolean value indicating whether the operation was successful or not 1 2 3.
+
+    Here is an example of how to use the unlink() method in Laravel to delete an image from the public path when a product is deleted:
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $image_path = '/uploads/products/' . $product->image;
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+        $product->delete();
+    }

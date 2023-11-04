@@ -41,7 +41,7 @@ class BrandController extends Controller
         $brand = Brand::findOrFail($id);
         return view('backend.brand.brand_edit',compact('brand'));
 
-    }
+    }//end method
     public function UpdateBrand(Request $request){
         $brand_id = $request->id;
         $old_img = $request->old_image;
