@@ -50,8 +50,8 @@
           <i class="fa fa-angle-left float-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><a href="buttons-default-button.html"><i class="zmdi zmdi-star-outline"></i> Default Button</a></li>
-          <li><a href="buttons-dropdown-buttons.html"><i class="zmdi zmdi-star-outline"></i> Dropdown Buttons</a></li>
+          <li><a href="buttons-default-button.html"><i class="zmdi zmdi-star-outline"></i> All Product</a></li>
+          <li><a href="buttons-dropdown-buttons.html"><i class="zmdi zmdi-star-outline"></i> Add Product</a></li>
       
         </ul>
       </li>
