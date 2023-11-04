@@ -11,6 +11,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link href="{{ asset('adminBackend/assets/plugins/inputtags/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
   <!--favicon-->
   <link rel="icon" href="{{ asset('adminBackend/assets/images/favicon.ico') }}" type="image/x-icon">
@@ -52,6 +54,7 @@
   <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js') }}"></script>
   <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.print.min.js') }}"></script>
   <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js') }}"></script>
+  <script src="{{asset('adminBackend/assets/plugins/inputtags/js/bootstrap-tagsinput.js')}}"></script>
 
   <script>
     $(document).ready(function() {
@@ -89,6 +92,8 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="{{ asset('adminBackend/assets/js/code.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+  <script src="{{ asset('adminbackend/assets/plugins/input-tags/js/tagsinput.js') }}"></script>
+  
 
   <script>
     @if(Session::has('message'))
