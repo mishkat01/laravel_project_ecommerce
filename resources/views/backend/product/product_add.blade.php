@@ -1,5 +1,7 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
 <div class="page-content">
 
@@ -61,14 +63,20 @@
 
   <div class="mb-3">
 				<label for="inputProductTitle" class="form-label">Main Thambnail</label>
-				<input name="product_thambnail" class="form-control" type="file" id="formFile">
+				<input name="product_thambnail" class="form-control" type="file" id="formFile" onchange="mainThamUrl(this)" >
+				<img src="" alt="" id='mainThmb'>
 			  </div>
+
 
 
 
   <div class="mb-3">
 				<label for="inputProductTitle" class="form-label">Multiple Image</label>
-				<input class="form-control" name="multi_img[]" type="file" id="formFileMultiple" multiple="">
+				<input class="form-control" name="multi_img[]" type="file" id="multiImg" multiple="">
+				
+				<div class="row" id="preview_img">
+
+				</div>
 			  </div>
 
 
@@ -98,43 +106,29 @@
   
 					<div class="col-12">
 					  <label for="inputProductType" class="form-label">Product Brand</label>
+
 					  <select class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-						<option data-select2-id="3">India</option>
-						<option data-select2-id="9">England</option>
-						<option data-select2-id="10">America</option>
-						<option data-select2-id="11">China</option>
-						<option data-select2-id="12">Australiya</option>
-						<option data-select2-id="13">Newzeland</option>
-						<option data-select2-id="14">Dubai</option>
-						<option data-select2-id="15">United Kingdom</option>
+						@foreach($brands as $brand)
+						<option value="{{$brand->id}}" data-select2-id="3">{{$brand->brand_name}}</option>
+					@endforeach
 					</select>
 					</div>
   
 					<div class="col-12">
 					  <label for="inputVendor" class="form-label">Product Category</label>
-					  <select class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-						<option data-select2-id="3">India</option>
-						<option data-select2-id="9">England</option>
-						<option data-select2-id="10">America</option>
-						<option data-select2-id="11">China</option>
-						<option data-select2-id="12">Australiya</option>
-						<option data-select2-id="13">Newzeland</option>
-						<option data-select2-id="14">Dubai</option>
-						<option data-select2-id="15">United Kingdom</option>
+					  <select name="category_id" class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+						@foreach($categories as $cat)
+						<option value="{{$cat->id}}" data-select2-id="3">{{$cat->category_name}}</option>
+					@endforeach
+				
 					</select>
 					</div>
   
 					<div class="col-12">
 					  <label for="inputCollection" class="form-label">Product SubCategory</label>
-					  <select class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-						<option data-select2-id="3">India</option>
-						<option data-select2-id="9">England</option>
-						<option data-select2-id="10">America</option>
-						<option data-select2-id="11">China</option>
-						<option data-select2-id="12">Australiya</option>
-						<option data-select2-id="13">Newzeland</option>
-						<option data-select2-id="14">Dubai</option>
-						<option data-select2-id="15">United Kingdom</option>
+					  <select name="subcategory_id" class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+						<option data-select2-id="3"></option>
+						
 					</select>
 					</div>
   
@@ -185,6 +179,7 @@
 					</div>
   
   <hr>
+  <br>
   
   
 					<div class="col-12">
@@ -199,12 +194,79 @@
 	</div>
   </div>
 </div>
+<option value="{{$cat->id}}"> {{ $cat->category_name}}</option>
 
 			</div>
 
 
 
+<script type="text/javascript">
+function mainThamUrl(input){
+	if(input.files && input.files[0]){
+		var reader = new FileReader();
+		reader.onload = function(e){
+			$('#mainThmb').attr('src',e.target.result).width(80).height(80);
+		};
+		reader.readAsDataURL(input.files[0]);
+	}
+}
 
+</script>
+
+<script> 
+ 
+	$(document).ready(function(){
+	 $('#multiImg').on('change', function(){ //on file input change
+		if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
+		{
+			var data = $(this)[0].files; //this file data
+			 
+			$.each(data, function(index, file){ //loop though each file
+				if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
+					var fRead = new FileReader(); //new filereader
+					fRead.onload = (function(file){ //trigger function on successful read
+					return function(e) {
+						var img = $('<img/>').addClass('thumb').attr('src', e.target.result) .width(100)
+					.height(80); //create image element 
+						$('#preview_img').append(img); //append image to output element
+					};
+					})(file);
+					fRead.readAsDataURL(file); //URL representing the file's data.
+				}
+			});
+			 
+		}else{
+			alert("Your browser doesn't support File API!"); //if File API is absent
+		}
+	 });
+	});
+	 
+	</script>
+
+<script type="text/javascript">
+  		
+	$(document).ready(function(){
+		$('select[name="category_id"]').on('change', function(){
+			var category_id = $(this).val();
+			if (category_id) {
+				$.ajax({
+					url: "{{ url('/subcategory/ajax') }}/"+category_id,
+					type: "GET",
+					dataType:"json",
+					success:function(data){
+						$('select[name="subcategory_id"]').html('');
+						var d =$('select[name="subcategory_id"]').empty();
+						$.each(data, function(key, value){
+							$('select[name="subcategory_id"]').append('<option value="'+ value.id + '">' + value.subcategory_name + '</option>');
+						});
+					},
+				});
+			} else {
+				alert('danger');
+			}
+		});
+	});
+</script>
 
 
 @endsection
