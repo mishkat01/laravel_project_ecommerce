@@ -31,9 +31,40 @@
   <!-- data tables -->
   <link href="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
+
+  <style>
+    .preloader {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    margin: 0 auto;
+}
+
+.preloader img.jump {
+    max-height: 50px;
+}
+  </style>
 </head>
 
 <body class="bg-dark">
+
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="text-center">
+                <img src="{{ asset('frontend/assets/imgs/theme/loading1.gif') }}" alt="" width="500px" />
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="wrapper">
   @include('admin.body.sidebar')
@@ -43,6 +74,8 @@
   <div class="content-wrapper">
     @yield('admin')
   </div>
+
+
 
   <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('adminBackend/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -67,6 +100,16 @@
       });
 
       table.buttons().container().appendTo('#example_wrapper .col-md-6:eq(0)');
+    });
+  </script>
+
+  <script>
+       $(window).on("load", function () {
+        $("#preloader-active").delay(10).fadeOut("slow");
+        $("body").delay(50).css({
+            overflow: "visible",
+        });
+        $("#onloadModal").modal("show");
     });
   </script>
 
