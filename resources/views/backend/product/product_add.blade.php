@@ -20,7 +20,8 @@
 
 				</div>
 				<!--end breadcrumb-->
-
+				<form id="productForm" method="POST" action="{{ route('store.product') }}" enctype="multipart/form-data">
+					@csrf
 <div class="card">
   <div class="card-body p-4">
 	  <h5 class="card-title">Add New Product</h5>
@@ -39,7 +40,7 @@
             <div class="mb-3"> 
 				<div class="form-group">
 					<label for="inputProductTitle" class="form-label">Product Tags</label><br>
-					<input type="text" class="form-control" data-role="tagsinput" id="inputProductTitle" value='new Product,Top product'  style="display: none;">
+					<input name="product_tags" type="text" class="form-control" data-role="tagsinput" id="inputProductTitle" value='new Product,Top product'  style="display: none;">
 				</div>
 			  </div>
 
@@ -49,11 +50,11 @@
 
 			  <div class="mb-3">
 				<label for="inputProductDescription" class="form-label">Long Description</label>
-				<textarea name="short_descp" class="form-control" id="inputProductDescription" rows="3"></textarea>
+				<textarea name="long_descp" class="form-control" id="inputProductDescription" rows="3"></textarea>
 			  </div>
 			  <div class="mb-3">
 				<label for="inputProductDescription" class="form-label">Short Description</label>
-				<textarea name="long_descp" class="form-control" id="inputProductDescription" rows="3"></textarea>
+				<textarea name="short_descp" class="form-control" id="inputProductDescription" rows="3"></textarea>
 			  </div>
 
 
@@ -88,7 +89,7 @@
 				<div class="row g-3">
 				  <div class="col-md-6">
 					  <label for="inputPrice" class="form-label">Product Price</label>
-					  <input type="text" name="selling_price" class="form-control" id="inputPrice" placeholder="00.00">
+					  <input type="text" name="product_price" class="form-control" id="inputPrice" placeholder="00.00">
 					</div>
 					<div class="col-md-6">
 					  <label for="inputCompareatprice" class="form-label">Discount Price </label>
@@ -107,7 +108,7 @@
 					<div class="col-12">
 					  <label for="inputProductType" class="form-label">Product Brand</label>
 
-					  <select class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+					  <select name="brand_id" class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
 						@foreach($brands as $brand)
 						<option value="{{$brand->id}}" data-select2-id="3">{{$brand->brand_name}}</option>
 					@endforeach
@@ -127,6 +128,7 @@
 					<div class="col-12">
 					  <label for="inputCollection" class="form-label">Product SubCategory</label>
 					  <select name="subcategory_id" class="form-control single-select select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+						<option data-select2-id="3">select a category</option>
 						<option data-select2-id="3"></option>
 						
 					</select>
@@ -159,7 +161,7 @@
   
   <div class="col-md-6">	
 	  <div class="form-check">
-			  <input class="form-check-input" name="special_offer" type="checkbox" value="1" id="flexCheckDefault">
+			  <input class="form-check-input" name="speacial_offer" type="checkbox" value="1" id="flexCheckDefault">
 			  <label class="form-check-label" for="flexCheckDefault">Special Offer</label>
 		  </div>
 	  </div>
@@ -167,7 +169,7 @@
   
 	  <div class="col-md-6">	
 	  <div class="form-check">
-			  <input class="form-check-input" name="special_deals" type="checkbox" value="1" id="flexCheckDefault">
+			  <input class="form-check-input" name="speacial_deal" type="checkbox" value="1" id="flexCheckDefault">
 			  <label class="form-check-label" for="flexCheckDefault">Special Deals</label>
 		  </div>
 	  </div>
@@ -184,9 +186,10 @@
   
 					<div class="col-12">
 						<div class="d-grid">
-						   <button type="button" class="btn btn-primary">Save Product</button>
+						   <button type="submit" class="btn btn-primary">Save Product</button>
 					  </div>
 				  </div>
+				  </form>
 			  </div> 
 		  </div>
 		  </div>
@@ -246,7 +249,7 @@ function mainThamUrl(input){
 <script type="text/javascript">
   		
 	$(document).ready(function(){
-		$('select[name="category_id"]').on('change', function(){
+		$('select[name="category_id"]').on('click', function(){
 			var category_id = $(this).val();
 			if (category_id) {
 				$.ajax({
