@@ -55,6 +55,12 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
+        // 'multiImage' => [
+        //     'driver' => 'local',
+        //     'root' => public_path('uploads/multiImage'), // Change the path to public/uploads
+        //     'url' => env('APP_URL').'/uploads/multiImage',
+           
+        // ],
 
     ],
 

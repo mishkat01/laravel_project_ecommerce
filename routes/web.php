@@ -98,7 +98,11 @@ Route::controller(BrandController::class)->group(function(){
             Route::get('/all/product' , 'AllProduct')->name('all.product');
             Route::get('/add/product' , 'AddProduct')->name('add.product');
             Route::post('/store/product' , 'StoreProduct')->name('store.product');
+<<<<<<< HEAD
             Route::get('/edit/product/{id}' , 'EditProduct')->name('edit.product');
+=======
+            // Route::get('/edit/subcategory/{id}' , 'EditSubCategory')->name('edit.subcategory');
+>>>>>>> b9b8116210ca62b8d5834adc5a77da1862f9f34c
             // Route::post('/update/subcategory' , 'UpdateSubCategory')->name('update.subcategory');
             Route::get('/delete/product/{id}' , 'DeleteProduct')->name('delete.product');
         });

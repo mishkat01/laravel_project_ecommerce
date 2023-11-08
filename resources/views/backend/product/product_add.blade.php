@@ -20,7 +20,11 @@
 
 				</div>
 				<!--end breadcrumb-->
+<<<<<<< HEAD
 		<form id="productForm" method="POST" action="{{ route('store.product') }}" enctype="multipart/form-data">
+=======
+				<form id="productForm" method="POST" action="{{ route('store.product') }}" enctype="multipart/form-data">
+>>>>>>> b9b8116210ca62b8d5834adc5a77da1862f9f34c
 					@csrf
 <div class="card">
   <div class="card-body p-4">
