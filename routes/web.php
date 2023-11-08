@@ -97,10 +97,10 @@ Route::controller(BrandController::class)->group(function(){
           Route::controller(ProductController::class)->group(function(){
             Route::get('/all/product' , 'AllProduct')->name('all.product');
             Route::get('/add/product' , 'AddProduct')->name('add.product');
-            // Route::post('/store/subcategory' , 'StoreSubCategory')->name('store.subcategory');
-            // Route::get('/edit/subcategory/{id}' , 'EditSubCategory')->name('edit.subcategory');
+            Route::post('/store/product' , 'StoreProduct')->name('store.product');
+            Route::get('/edit/product/{id}' , 'EditProduct')->name('edit.product');
             // Route::post('/update/subcategory' , 'UpdateSubCategory')->name('update.subcategory');
-            // Route::get('/delete/subcategory/{id}' , 'DeleteSubCategory')->name('delete.subcategory');
+            Route::get('/delete/product/{id}' , 'DeleteProduct')->name('delete.product');
         });
 
 });
