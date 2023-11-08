@@ -100,7 +100,7 @@ Route::controller(BrandController::class)->group(function(){
             Route::post('/store/product' , 'StoreProduct')->name('store.product');
             Route::get('/edit/product/{id}' , 'EditProduct')->name('edit.product');
             Route::post('/store/product' , 'StoreProduct')->name('store.product');
-            Route::get('/edit/product/{id}' , 'EditProduct')->name('edit.product');
+            
             // Route::post('/update/subcategory' , 'UpdateSubCategory')->name('update.subcategory');
             Route::get('/delete/product/{id}' , 'DeleteProduct')->name('delete.product');
         });

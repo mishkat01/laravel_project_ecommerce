@@ -5,11 +5,11 @@
 
 <div class="row pt-2 pb-2">
         <div class="col-sm-9">
-		    <h4 class="page-title">Add SubCategory</h4>
+		    <h4 class="page-title">Edit Product</h4>
 		    <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javaScript:void();">dashboard</a></li>
-            <li class="breadcrumb-item"><a href="javaScript:void();">Forms</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Add SubCategory</li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">product</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
          </ol>
 	   </div>
 	   <div class="col-sm-3">
@@ -39,7 +39,7 @@
                 @csrf
 <div class="card">
 <div class="card-body p-4">
-  <h5 class="card-title">Add New Product</h5>
+  <h5 class="card-title">Edit Product</h5>
   <hr/>
    <div class="form-body mt-4">
     <div class="row">
@@ -49,7 +49,7 @@
 
         <div class="mb-3">
             <label for="inputProductTitle" class="form-label">Product Name</label>
-            <input type="text" name="product_name" class="form-control" id="inputProductTitle" placeholder="Enter product title">
+            <input type="text" name="product_name" value="{{$products}}" class="form-control" id="inputProductTitle" placeholder="Enter product title">
           </div>
 
         <div class="mb-3"> 

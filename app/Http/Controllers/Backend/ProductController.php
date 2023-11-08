@@ -38,7 +38,7 @@ class ProductController extends Controller
             'product_tags' => $request->product_tags,
             'long_descp' => $request->long_descp,
             'short_descp' => $request->short_descp,
-            'product_price' => $request->product_price,
+            'selling_price' => $request->selling_price,
             'discount_price' => $request->discount_price,
             'product_code' => $request->product_code,
             'product_qty' => $request->product_qty,
@@ -98,10 +98,11 @@ class ProductController extends Controller
     }//end method
     public function EditProduct($id){
         $product = Product::findOrFail($id);
-        $brand = Brand::findOrFail($id);
-        $categories = Category::findOrFail($id);
-        $categories = Category::findOrFail($id);
-        return view('backend.product.product_edit',compact('product'));
+        $brands = Brand::latest()->get();
+        $categories = Category::latest()->get();
+        $subcategories = SubCategory::latest()->get();
+        
+        return view('backend.product.product_edit',compact('product','categories','brands','subcategories'));
     }
 
 }
