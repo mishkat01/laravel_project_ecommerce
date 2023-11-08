@@ -243,7 +243,8 @@
 
 
             <!-- header bottom start -->
-
+         
+            
                                 <div class="header-bottom header-bottom-bg-color " style="background-color: black !important;">
                                     <div class="container">
                                        
@@ -258,19 +259,38 @@
                                                                 <a class="active" href="{{ url('/')}}">Home  </a>
 
                                                             </li>
+                                                            @php
+                                                            $categories = App\Models\Category::orderBy('category_name', 'ASC')->get();
+                                                            @endphp
+                                                            @foreach ($categories as $cat)
+                                                            <li class="position-static">
+                                                              <a class="active" href="{{ url('/') }}">{{ $cat->category_name }}</a>
+                                                              @php
+                                                              $subcategories = App\Models\SubCategory::where('category_id', $cat->id)->orderBy('subcategory_name', 'ASC')->get();
+                                                              @endphp
+                                                              <ul class="mega-menu">
+                                                                <li class="sub-mega-menu sub-mega-menu-width-22">
+                                                                  <ul>
+                                                                    @foreach ($subcategories as $sub)
+                                                                    <li><a href="shop-product-right.html">{{ $sub->subcategory_name }}</a></li>
+                                                                    @endforeach
+                                                                  </ul>
+                                                                </li>
+                                                              </ul>
+                                                            </li>
+                                                            @endforeach
+                                                          
+
                                                             <li class="position-static">
                                                                 <a href="#">Laptops </i></a>
+
                                                                 <ul class="mega-menu">
                                                                    
                                                                     <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
+                                                                        
                                                                         <ul>
                                                                             <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
+                                                                           
                                                                         </ul>
                                                                     </li>
                               
@@ -278,190 +298,7 @@
                                         </li>
                                                       
                                                     
-                                                            <li class="position-static">
-                                                                <a href="#">Desktop and server </i></a>
-                                                                <ul class="mega-menu">
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Fruit & Vegetables</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                                            <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                                            <li><a href="shop-product-right.html">Herbs & Seasonings</a></li>
-                                                                            <li><a href="shop-product-right.html">Cuts & Sprouts</a></li>
-                                                                            <li><a href="shop-product-right.html">Exotic Fruits & Veggies</a></li>
-                                                                            <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Breakfast & Dairy</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Milk & Flavoured Milk</a></li>
-                                                                            <li><a href="shop-product-right.html">Butter and Margarine</a></li>
-                                                                            <li><a href="shop-product-right.html">Eggs Substitutes</a></li>
-                                                                            <li><a href="shop-product-right.html">Marmalades</a></li>
-                                                                            <li><a href="shop-product-right.html">Sour Cream</a></li>
-                                                                            <li><a href="shop-product-right.html">Cheese</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                                                <a href="#">Gaming </i></a>
-                                                                <ul class="mega-menu">
-                                                                  
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Breakfast & Dairy</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Milk & Flavoured Milk</a></li>
-                                                                            <li><a href="shop-product-right.html">Butter and Margarine</a></li>
-                                                                            <li><a href="shop-product-right.html">Eggs Substitutes</a></li>
-                                                                            <li><a href="shop-product-right.html">Marmalades</a></li>
-                                                                            <li><a href="shop-product-right.html">Sour Cream</a></li>
-                                                                            <li><a href="shop-product-right.html">Cheese</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                                                <a href="#">Monitor </i></a>
-                                                                <ul class="mega-menu">
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Fruit & Vegetables</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                                            <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                                            <li><a href="shop-product-right.html">Herbs & Seasonings</a></li>
-                                                                            <li><a href="shop-product-right.html">Cuts & Sprouts</a></li>
-                                                                            <li><a href="shop-product-right.html">Exotic Fruits & Veggies</a></li>
-                                                                            <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Breakfast & Dairy</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Milk & Flavoured Milk</a></li>
-                                                                            <li><a href="shop-product-right.html">Butter and Margarine</a></li>
-                                                                            <li><a href="shop-product-right.html">Eggs Substitutes</a></li>
-                                                                            <li><a href="shop-product-right.html">Marmalades</a></li>
-                                                                            <li><a href="shop-product-right.html">Sour Cream</a></li>
-                                                                            <li><a href="shop-product-right.html">Cheese</a></li>
-                                                                        </ul>
-                                                                    </li>
                                                            
-                              
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                                                <a href="#">Network </i></a>
-                                                                <ul class="mega-menu">
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Fruit & Vegetables</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                                            <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                                            <li><a href="shop-product-right.html">Herbs & Seasonings</a></li>
-                                                                            <li><a href="shop-product-right.html">Cuts & Sprouts</a></li>
-                                                                            <li><a href="shop-product-right.html">Exotic Fruits & Veggies</a></li>
-                                                                            <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                   
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                                                <a href="#">Sound System </i></a>
-                                                                <ul class="mega-menu">
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Fruit & Vegetables</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                                            <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                                            <li><a href="shop-product-right.html">Herbs & Seasonings</a></li>
-                                                                            <li><a href="shop-product-right.html">Cuts & Sprouts</a></li>
-                                                                            <li><a href="shop-product-right.html">Exotic Fruits & Veggies</a></li>
-                                                                            <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                   
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                                                <a href="#">Softwere </i></a>
-                                                                <ul class="mega-menu">
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Fruit & Vegetables</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                                            <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                                            <li><a href="shop-product-right.html">Herbs & Seasonings</a></li>
-                                                                            <li><a href="shop-product-right.html">Cuts & Sprouts</a></li>
-                                                                            <li><a href="shop-product-right.html">Exotic Fruits & Veggies</a></li>
-                                                                            <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                   
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        <a class="menu-title" href="#">Meat & Seafood</a>
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                                            <li><a href="shop-product-right.html">Chicken</a></li>
-                                                                            <li><a href="shop-product-right.html">Sliced Deli Meat</a></li>
-                                                                            <li><a href="shop-product-right.html">Wild Caught Fillets</a></li>
-                                                                            <li><a href="shop-product-right.html">Crab and Shellfish</a></li>
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
                                         <li>
                                             <a href="page-contact.html">Store</a>
                                         </li>

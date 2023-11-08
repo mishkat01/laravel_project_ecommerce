@@ -52,7 +52,8 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <!-- call the category relationship function then access category table fields -->
-                        <td>{{$item['category']['category_name']}}</td>
+                        <td>{{ $item['category']['category_name'] ?? 'N/A' }}</td>
+
                         <td>{{$item->subcategory_name}}</td>
                         <td>
                             <a href="{{ route('edit.subcategory',$item->id) }}" class="btn btn-info">Edit</a>
