@@ -51,7 +51,7 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$item->category_name}}</td>
-                        <td><img src="{{ asset($item->category_image) }}" style="width:60px; height:40px;"></td>
+                        <td><img src="{{ asset($item->category_image) }}" style="width:60px; height:60px;"></td>
                         <td>
                             <a href="{{ route('edit.category',$item->id) }}" class="btn btn-info">Edit</a>
                             <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger" id="deleteButton" >Delete</a>

@@ -45,6 +45,7 @@ class ProductController extends Controller
             'brand_id' => $request->brand_id,
             'product_thambnail' => $save_url,
             'category_id' => $request->category_id,
+            'subcategory_id' => $request->subcategory_id,
             'hot_deals' => $request->hot_deals,
             'featured' => $request->featured,
             'speacial_offer' => $request->speacial_offer,

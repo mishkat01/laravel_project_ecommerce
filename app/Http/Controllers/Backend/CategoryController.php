@@ -20,7 +20,7 @@ class CategoryController extends Controller
     public function StoreCategory(Request $request){
         $image = $request->file('category_image');
         $name_genarate = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(120,120)->save('uploads/category/'.$name_genarate);
+        Image::make($image)->resize(60,60)->save('uploads/category/'.$name_genarate);
         $save_url = 'uploads/category/'.$name_genarate;
  
         Category::insert([
