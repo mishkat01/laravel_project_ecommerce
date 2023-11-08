@@ -127,3 +127,9 @@ make model with migration-
         }
         $product->delete();
     }
+    10) insertGetId():
+    insertGetId is a method provided by Laravel's query builder that allows you to insert a record and immediately retrieve the ID of the inserted row 1. Here's an example of how to use it:
+
+$id = DB::table('users')->insertGetId(
+    ['email' => 'john@example.com', 'votes' => 0]
+);

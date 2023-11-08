@@ -14,8 +14,8 @@
 	   </div>
 	   <div class="col-sm-3">
        <div class="btn-group float-sm-right">
-        <a href="{{ route('add.brand')}}">
-        <button type="button" class="btn btn-outline-dark waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add Brand</button></a>
+        <a href="{{ route('add.product')}}">
+        <button type="button" class="btn btn-outline-dark waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Add Product</button></a>
         <!-- <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
         <span class="caret"></span>
         </button> -->
@@ -33,10 +33,10 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card">
-            <div class="card-header"><i class="fa fa-table"></i> Data Table Example</div>
+            <div class="card-header"><i class="fa fa-table"></i> All product</div>
             <div class="card-body">
               <div class="table-responsive">
-              <table id="default-datatable" class="table table-bordered">
+              <table id="default-datatable" class="table table-bordered" style=" font-size: 12px;">
                 <thead>
                     <tr>
                         <th>SL</th>
@@ -60,11 +60,20 @@
                         <td>{{$item->product_price}}</td>
                         <td>{{$item->product_qty}}</td>
                         <td>{{$item->discount_price}}</td>
-                        <td>{{$item->status}}</td>
+                        <td>
+                          @if ($item->status==1)
+                            <button class="btn btn-success btn-sm" >In Stock</button>
+                          
+                          @else
+                            <button class="btn btn-danger btn-sm">Out Of Stock</button>
+                          
+                              
+                          @endif
+                          </td>
                       
                         <td>
-                            <a href="{{ route('edit.brand',$item->id) }}" class="btn btn-info">Edit</a>
-                            <a href="{{ route('delete.brand',$item->id) }}" class="btn btn-danger" id="deleteButton" >Delete</a>
+                            <a href="{{ route('edit.product',$item->id) }}" class="btn btn-info btn-sm">Edit</a>
+                            <a href="{{ route('delete.product',$item->id) }}" class="btn btn-danger btn-sm" id="deleteButton" >Delete</a>
                         </td>
                    
                     </tr>
