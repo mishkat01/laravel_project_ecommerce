@@ -97,12 +97,42 @@ class ProductController extends Controller
         return redirect()->back()->with($notification);
     }//end method
     public function EditProduct($id){
-        $product = Product::findOrFail($id);
+        $products = Product::findOrFail($id);
         $brands = Brand::latest()->get();
         $categories = Category::latest()->get();
         $subcategories = SubCategory::latest()->get();
         
-        return view('backend.product.product_edit',compact('product','categories','brands','subcategories'));
+        return view('backend.product.product_edit',compact('products','categories','brands','subcategories'));
+    }//end 
+
+    public function UpdateProduct( Request $request){
+        $product_id = $request->id;
+        Product::findOrFail( $product_id)->update([
+            'product_name' => $request->product_name,
+            'product_slug' => strtolower(str_replace(' ','-',$request->product_name)),
+            'product_tags' => $request->product_tags,
+            'long_descp' => $request->long_descp,
+            'short_descp' => $request->short_descp,
+            'selling_price' => $request->selling_price,
+            'discount_price' => $request->discount_price,
+            'product_code' => $request->product_code,
+            'product_qty' => $request->product_qty,
+            'brand_id' => $request->brand_id,
+            'category_id' => $request->category_id,
+            'subcategory_id' => $request->subcategory_id,
+            'hot_deals' => $request->hot_deals,
+            'featured' => $request->featured,
+            'speacial_offer' => $request->speacial_offer,
+            'speacial_deal' => $request->speacial_deal,
+            'status' => 1,
+            'created_at' => Carbon::now(),
+        ]);
+        $notification = array (
+            'message' =>'Product Updated Without  Successfully',
+            'alert-type' =>'success'
+        );
+       
+        return redirect()->route('all.product')->with($notification);
     }
 
 }
