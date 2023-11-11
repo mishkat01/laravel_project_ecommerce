@@ -38,7 +38,7 @@
     flex-wrap: wrap;
     /* align-items: stretch; */
     width: 70%;
-    padding:0 120px;
+    padding:5px 120px;
 }
 .search-btn {
     background-color: #72bf44;
@@ -281,21 +281,6 @@
                                                             @endforeach
                                                           
 
-                                                            <li class="position-static">
-                                                                <a href="#">Laptops </i></a>
-
-                                                                <ul class="mega-menu">
-                                                                   
-                                                                    <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                                        
-                                                                        <ul>
-                                                                            <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                                           
-                                                                        </ul>
-                                                                    </li>
-                              
-                                            </ul>
-                                        </li>
                                                       
                                                     
                                                            

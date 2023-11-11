@@ -7813,7 +7813,7 @@ h6.post-title {
     left: 0;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    border-bottom: 2px solid #fdc040;
+    /* border-bottom: 2px solid #fdc040; */
     background: #fff;
 }
 
@@ -9102,7 +9102,7 @@ span.fi-rs-apps {
 }
 
 .main-menu > nav > ul > li ul.mega-menu li ul {
-    margin-top: 28px;
+    margin-top: 0px;
 }
 
 .main-menu > nav > ul > li ul.mega-menu li ul li {
@@ -12092,9 +12092,9 @@ footer .hotline img {
     .header-style-3 .main-nav {
         border: none !important;
     }
-    .header-style-3 .sticky-bar.stick.sticky-blue-bg {
+    /* .header-style-3 .sticky-bar.stick.sticky-blue-bg {
         background-color: #72bf44;
-    }
+    } */
     .header-style-4 .main-nav {
         border: none !important;
     }
