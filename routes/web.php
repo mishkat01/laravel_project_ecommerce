@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 
+use App\Http\Controllers\Frontend\IndexController;
+
 
  
 /*
@@ -105,5 +107,11 @@ Route::controller(BrandController::class)->group(function(){
             Route::get('/delete/product/{id}' , 'DeleteProduct')->name('delete.product');
         });
 
-});
+});//end admin
+
+//Frontend product details all route
+Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails'])->name('dashboard');
+
+
+
 require __DIR__.'/auth.php';

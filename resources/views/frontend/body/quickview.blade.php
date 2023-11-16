@@ -6,41 +6,16 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
                             <div class="detail-gallery">
-                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+                                {{-- <span class="zoom-icon"><i class="fi-rs-search"></i></span> --}}
                                 <!-- MAIN SLIDES -->
         <div class="product-image-slider">
             <figure class="border-radius-10">
                 <img src="{{ asset('frontend/assets/imgs/shop/product-16-2.jpg') }}" alt="product image" />
             </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/assets/imgs/shop/product-16-1.jpg') }}" alt="product image" />
-            </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/assets/imgs/shop/product-16-3.jpg') }}" alt="product image" />
-            </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/assets/imgs/shop/product-16-4.jpg') }}" alt="product image" />
-            </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/') }}assets/imgs/shop/product-16-5.jpg" alt="product image" />
-            </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/assets/imgs/shop/product-16-6.jpg') }}" alt="product image" />
-            </figure>
-            <figure class="border-radius-10">
-                <img src="{{ asset('frontend/assets/imgs/shop/product-16-7.jpg') }}" alt="product image" />
-            </figure>
+  
                                 </div>
                                 <!-- THUMBNAILS -->
-        <div class="slider-nav-thumbnails">
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-3.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-4.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-5.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-6.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-7.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-8.jpg') }}" alt="product image" /></div>
-            <div><img src="{{ asset('frontend/assets/imgs/shop/thumbnail-9.jpg') }}" alt="product image" /></div>
-        </div>
+  
                             </div>
                             <!-- End Gallery -->
                         </div>
