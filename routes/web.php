@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\CartController;
 
 
  
@@ -112,6 +113,13 @@ Route::controller(BrandController::class)->group(function(){
 //Frontend product details all route
 Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails'])->name('dashboard');
 
+
+//product view model with ajax
+
+Route::get('/product/view/model/{id}',[IndexController::class,'ProductViewAjax']);
+
+//add to cart store
+Route::post('/cart/data/store/{id}',[CartController::class,'AddToCart']);
 
 
 require __DIR__.'/auth.php';

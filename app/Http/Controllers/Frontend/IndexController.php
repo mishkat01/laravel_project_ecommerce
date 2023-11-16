@@ -19,4 +19,11 @@ class IndexController extends Controller
         $multiImage =  MultiImg:: where ('product_id',$id)->get();
         return view ('frontend.product.product_details',compact('product','multiImage'));
     }//end method
+
+    public function ProductViewAjax($id){
+        $product = Product::findOrFail($id);
+        return response()->json(array(
+            'product' =>  $product
+        ));
+    }
 }

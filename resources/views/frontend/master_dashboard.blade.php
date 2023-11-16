@@ -6,6 +6,12 @@
     <title>Ryans Computers</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+ 
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="" />
     <meta property="og:type" content="" />
@@ -78,6 +84,97 @@
     <!-- Template  JS -->
     <script src="{{ asset('frontend/assets/js/main.js?v=5.3') }}"></script>
     <script src="{{ asset('frontend/assets/js/shop.js?v=5.3') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers:{
+                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            }
+        })
+
+        function productView(id){
+            // alert(id);
+            $.ajax({
+                type:'GET',
+                url:'/product/view/model/'+id,
+                dataType:'json',
+                success:function(data){
+                    // console.log(data)
+                    $('#pname').text(data.product.product_name);
+                    $('#pprice').text(data.product.discount_price);
+                    $('#oldprice').text(data.product.selling_price);
+                    $('#pcode').text(data.product.product_code);
+                    $('#pimage').attr('src','/'+data.product.product_thambnail);
+                    $('#pstock').text(data.product.product_qty);
+
+                    $('#product_id').val(id);
+                    $('#qty').val(1);
+
+                    if(data.product.discount_price==null){
+                        $('#pprice').text('');
+                        $('#oldprice').text('');
+                        $('#pprice').text(data.product.selling_price);
+                    }else{
+                        $('#pprice').text(data.product.selling_price);
+                        $('#oldprice').text(data.product.selling_price);
+                    }
+                   
+
+                }
+            })
+        }
+        //End product view with model 
+
+        //start product view with model
+      function  addToCart(){
+        var product_name= $('#pname').text();
+        var id= $('#product_id').val();
+        var qty= $('#qty').val();
+        $.ajax({
+            type:"POST",
+            dataType : 'json',
+            data : {
+                qty:qty,
+                product_name:product_name,
+            },
+            url : "/cart/data/store/"+id,
+            success:function(data){
+                // console.log(data)
+
+                //start message
+                const Toast = Swal.mixin({
+                    toast:true,
+                    position: "top-end",
+                    icon: "success",
+                    
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+                if($.isEmptyObject(data.error)){
+                    Toast.fire({
+                    
+                    type: "success",
+                    title: data.success,
+                  
+                    });
+                }else{
+                    Toast.fire({
+                    
+                    type: "error",
+                    title: data.error,
+                  
+                    });
+                        
+                    }
+                //end message
+            }
+        })
+
+      }
+
+    </script>
+
 </body>
 
 </html>
