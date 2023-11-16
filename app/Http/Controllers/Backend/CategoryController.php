@@ -49,7 +49,7 @@ class CategoryController extends Controller
         if($request->file('category_image')){
             $image = $request->file('category_image');
             $name_genarate = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(120,120)->save('uploads/category/'.$name_genarate);
+            Image::make($image)->resize(60,60)->save('uploads/category/'.$name_genarate);
             $save_url = 'uploads/category/'.$name_genarate;
 
             //repace image
