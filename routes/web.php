@@ -145,6 +145,9 @@ Route::middleware(['auth','role:user'])->group(function() {
        Route::get('/mycart' , 'MyCart')->name('myCart');
        Route::get('/get-cart-product' , 'GetCartProduct');
        Route::get('/cart-remove/{rowId}' , 'CartRemove');
+       Route::get('/cart-dec/{rowId}' , 'CartDec');
+       Route::get('/cart-inc/{rowId}' , 'CartInc');
+     
        
    
    }); 

@@ -206,7 +206,7 @@ input:focus::-moz-placeholder {
 }
 
 a {
-    color: #72bf44;
+    color: black;
 }
 
 a:hover {
@@ -380,7 +380,7 @@ input[type="number"]:focus,
 }
 
 .text-brand {
-    color: #72bf44 !important;
+    color: #2c2c2c !important;
 }
 
 .text-brand-2 {
@@ -3052,7 +3052,9 @@ input.qty-val {
 }
 
 .page-header.breadcrumb-wrap {
-    padding: 20px;
+    margin:20px ;
+    margin-bottom: 5px !important;
+    /* padding: 10px; */
     background-color: #fff;
     border-bottom: 1px solid #ececec;
     font-family: "Quicksand", sans-serif;
@@ -4122,8 +4124,8 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-action-1 {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 75%;
+    top: 35%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
@@ -5123,9 +5125,9 @@ table .product-thumbnail img {
     border: 2px solid #a2d2c9;
 }
 
-.slider-nav-thumbnails div.slick-slide {
+/* .slider-nav-thumbnails div.slick-slide {
     margin: 0 10px;
-}
+} */
 
 .slider-nav-thumbnails button {
     opacity: 0;
@@ -5268,11 +5270,11 @@ table .product-thumbnail img {
     font-size: 16px;
     position: absolute;
     right: 8px;
-    color: #72bf44;
+    color: #000000;
 }
 
 .detail-qty > a:hover {
-    color: #29a56c;
+    color: #0a0a0a;
 }
 
 .detail-qty > a.qty-up {
@@ -5309,10 +5311,10 @@ table .product-thumbnail img {
 .detail-extralink .detail-qty {
     margin: 0 6px 15px 0;
     background: #fff;
-    border: 2px solid #72bf44 !important;
+    border: 2px solid #050505 !important;
     font-size: 16px;
     font-weight: 700;
-    color: #72bf44;
+    color: #000000;
     border-radius: 5px;
     padding: 11px 20px 11px 30px;
     max-width: 90px;
@@ -5727,13 +5729,13 @@ table .product-thumbnail img {
     color: #253d4e;
 }
 
-.shopping-summery table thead th.start {
+/* .shopping-summery table thead th.start {
     border-radius: 20px 0 0 20px;
-}
+} */
 
-.shopping-summery table thead th.end {
+/* .shopping-summery table thead th.end {
     border-radius: 0 20px 20px 0;
-}
+} */
 
 .shopping-summery table tbody tr img {
     max-width: 120px;

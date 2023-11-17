@@ -109,6 +109,7 @@ class CartController extends Controller
             'carts'=>$carts,
             'cartQty'=> $cartQty,
             'cartTotal'=> $cartTotal,
+            
 
         ));
     }
@@ -117,5 +118,16 @@ class CartController extends Controller
         Cart::remove($rowId);
         return response()->json(['success'=> 'product removed']);
     }
+    public function  CartDec($rowId){
+        $row = Cart::get($rowId);
+        Cart::update($rowId,$row->qty-1);
+        return response()->json('dec');
+    }
+    public function  CartInc($rowId){
+        $row = Cart::get($rowId);
+        Cart::update($rowId,$row->qty+1);
+        return response()->json('Inc');
+    }
+  
 
 }

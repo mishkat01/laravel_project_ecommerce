@@ -236,7 +236,7 @@
            url: '/product/mini/cart',
            dataType: 'json',
            success:function(response){
-               // console.log(response)
+               console.log(response)
             $('#cartQty').text(response.cartQty)
             
             $('span[id="cartSubTotal"]').text(response.cartTotal)
@@ -260,7 +260,7 @@
                    </div>
                </li> 
            </ul>
-           <hr><br>  
+            
                   `  
              });
    
@@ -332,7 +332,7 @@ function cart(){
                         <td class="custome-checkbox pl-30">
 
                         </td>
-                        <td class="image product-thumbnail pt-40"><img src="/${value.options.image}" alt="#"></td>
+                        <td class="image product-thumbnail pt-40" style="width:200px;"><img src="/${value.options.image}" alt="#"></td>
                         <td class="product-des product-name">
                             <h6 class="mb-5"><a class="product-name mb-10 text-heading" href="shop-product-right.html">${value.name}</a></h6>
                           
@@ -345,11 +345,13 @@ function cart(){
                         <td class="text-center detail-info" data-title="Stock">
                             <div class="detail-extralink mr-15">
                                 <div class="detail-qty border radius">
-                                    <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+
+                                    <a type="submit" id="${value.rowId}" onclick="cartDec(this.id)" href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
 
                                     <input type="text" name="quantity" class="qty-val" value="${value.qty}" min="1">
                                     
-                                    <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                    <a type="submit" id="${value.rowId}" onclick="cartInc(this.id)" href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                     
                                 </div>
                             </div>
                         </td>
@@ -361,8 +363,10 @@ function cart(){
                                 <i class="fi-rs-trash"></i>
                                 </a>
                                 </td>
-                        </tr>
 
+                                
+                                
+                        </tr>
 
                   `  
              });
@@ -413,8 +417,41 @@ function cart(){
             }
         })
     }
-   //remove end
+    
+        //remove end
+
+        //cartdecc
+        function cartDec(rowId){
+            $.ajax({
+                type:'GET',
+                url:'/cart-dec/'+rowId,
+                dataType: 'json',
+                success: function(data){
+                    cart()
+                    miniCart()
+                    
+                }
+            })
+        }
+
+
+        //cartinc
+
+        function cartInc(rowId){
+            $.ajax({
+                type:'GET',
+                url:'/cart-inc/'+rowId,
+                dataType: 'json',
+                success: function(data){
+                    cart()
+                    miniCart()
+                    
+                }
+            })
+        }
    </script>
+
+
 
 </body>
 

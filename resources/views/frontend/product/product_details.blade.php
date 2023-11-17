@@ -10,16 +10,17 @@
             </div>
         </div>
         <div class="container mb-30">
-            <div class="row">
-                <div class="col-xl-10 col-lg-12 m-auto">
+            <div class="row" style="margin: 2px; !important">
+                <div class="" >
 <div class="product-detail accordion-detail">
     <div class="row mb-50 mt-30">
-        <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
+        <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5" style="background-color: white">
             <div class="detail-gallery">
-                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+               
                 <!-- MAIN SLIDES -->
                
-                <div class="product-image-slider">
+                <div class="product-image-slider" style="
+                width: 302px;float:right">
                     @foreach ($multiImage as $img)
                     <figure class="border-radius-10">
                         <img src="{{asset($img->photo_name)}}" alt="product image" />
@@ -29,13 +30,18 @@
                    
                 </div>
                 <!-- THUMBNAILS -->
-                <div class="slider-nav-thumbnails">
+                <div class="slider-nav-thumbnails" style="display:grid; !important">
                     @foreach ($multiImage as $img)
-                    <div>
-                        
-                        <img src="{{asset($img->photo_name)}}" alt="product image" />
-                       
-                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                      
+                                <img src="{{asset($img->photo_name)}}" alt="product image" />
+                               
+                            </div>
+                        </li>
+                    </ul>
+                  
                     @endforeach
                 </div>
             </div>
