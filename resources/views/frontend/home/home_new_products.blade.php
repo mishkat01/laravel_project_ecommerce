@@ -95,7 +95,7 @@
                                             @endif
                                            
                                             <div class="add-cart">
-                                                <input type="text" id="product_id">
+                                                <input type="hidden" id="product_id">
                                                 <a onclick="addToCart()" class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
                                             </div>
                                         </div>

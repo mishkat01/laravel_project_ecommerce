@@ -1,7 +1,7 @@
 <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeModal"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
@@ -36,12 +36,16 @@
                                 </div>
                                 <div class="clearfix product-price-cover">
                                     <div class="product-price primary-color float-left">
+                                        <span class="current-price text-brand" >
+                                            ৳ {{-- $38 --}}
+                                        </span>
                                         <span class="current-price text-brand" id="pprice">
-                                            {{-- $38 --}}
+                                            
                                         </span>
                                         <span>
                                             {{-- <span class="save-price font-md color3 ml-15" >26% Off</span> --}}
-                                            <span class="old-price font-md ml-15" id="oldprice">$52</span>
+                                            <span class="old-price font-md ml-15" ></span>
+                                            <span class="old-price font-md ml-15" id="oldprice"></span>
                                         </span>
                                     </div>
                                 </div>

@@ -111,7 +111,7 @@ Route::controller(BrandController::class)->group(function(){
 });//end admin
 
 //Frontend product details all route
-Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails'])->name('dashboard');
+Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails']);
 
 
 //product view model with ajax
@@ -123,6 +123,37 @@ Route::post('/cart/data/store/{id}',[CartController::class,'AddToCart']);
 
 //get data from  cart 
 Route::get('product/mini/cart',[CartController::class,'AddMiniCart']);
+
+//remove  cart 
+Route::get('/minicart/product/remove/{rowId}',[CartController::class,'RemoveMiniCart']);
+
+//product details cart 
+Route::post('/dcart/data/store/{id}',[CartController::class,'AddMiniCartDetails']);
+
+
+
+Route::middleware(['auth','role:user'])->group(function() {
+
+   
+
+   
+   
+ 
+   
+    // Cart All Route 
+   Route::controller(CartController::class)->group(function(){
+       Route::get('/mycart' , 'MyCart')->name('myCart');
+       Route::get('/get-cart-product' , 'GetCartProduct');
+       Route::get('/cart-remove/{rowId}' , 'CartRemove');
+       
+   
+   }); 
+   
+   
+   
+   
+   }); // end group User middleware
+
 
 
 require __DIR__.'/auth.php';
