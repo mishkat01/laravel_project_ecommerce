@@ -121,5 +121,8 @@ Route::get('/product/view/model/{id}',[IndexController::class,'ProductViewAjax']
 //add to cart store
 Route::post('/cart/data/store/{id}',[CartController::class,'AddToCart']);
 
+//get data from  cart 
+Route::get('product/mini/cart',[CartController::class,'AddMiniCart']);
+
 
 require __DIR__.'/auth.php';

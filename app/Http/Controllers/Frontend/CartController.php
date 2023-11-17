@@ -19,8 +19,8 @@ class CartController extends Controller
                 'name' => $request->product_name,
                 'qty' => $request->qty,
                 'price' => $product->selling_price,
-                'weight'=>2,
-                'option'=>[
+                'weight'=>1,
+                'options'=>[
                     'image'=>$product->product_thambnail,
                 ],
                 ]);
@@ -34,7 +34,8 @@ class CartController extends Controller
                 'name' => $request->product_name,
                 'qty' => $request->qty,
                 'price' => $product->discount_price,
-                'option'=>[
+                'weight'=>1,
+                'options'=>[
                     'image'=>$product->product_thambnail,
                 ]
                 ]);
@@ -43,4 +44,16 @@ class CartController extends Controller
                 ]);
         }
     }
+
+    public function AddMiniCart(){
+        $carts = Cart::content();
+        $cartQty= Cart::count();
+        $cartTotal = Cart::total();
+        return response()->json(array(
+            'carts'=>$carts,
+            'cartQty'=> $cartQty,
+            'cartTotal'=> $cartTotal,
+
+        ));
+    }//end method
 }
