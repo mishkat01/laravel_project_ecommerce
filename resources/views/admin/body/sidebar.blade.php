@@ -58,12 +58,12 @@
       <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-card-travel"></i>
-          <span>Review</span>
+          <span>Order Manage</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="sidebar-submenu">
-          <li><a href="components-range-slider.html"><i class="zmdi zmdi-star-outline"></i> Range Sliders</a></li>
-          <li><a href="components-image-carousel.html"><i class="zmdi zmdi-star-outline"></i> Image Carousels</a></li>
+          <li><a href="{{route('pending.order')}}"><i class="zmdi zmdi-star-outline"></i>Pending Order</a></li>
+         
         </ul>
       </li>
       <li>

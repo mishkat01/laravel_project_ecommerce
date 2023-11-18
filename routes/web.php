@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\PlaceOrderController;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
@@ -109,6 +110,11 @@ Route::controller(BrandController::class)->group(function(){
             
             Route::post('/update/update.product' , 'UpdateProduct')->name('update.product');
             Route::get('/delete/product/{id}' , 'DeleteProduct')->name('delete.product');
+        });
+
+        Route::controller(PlaceOrderController::class)->group(function(){
+            Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
+           
         });
 
 });//end admin
