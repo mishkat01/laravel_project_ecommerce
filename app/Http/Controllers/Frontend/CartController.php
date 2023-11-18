@@ -8,6 +8,9 @@ use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Session;
 use Auth;
+use App\Models\Order;
+use App\Models\OderItem;
+use Carbon\Carbon;
 
 
 class CartController extends Controller
@@ -190,8 +193,53 @@ class CartController extends Controller
         }
     }
 
-    public function CheckoutStore(){
-        
+    public function Order(Request $request){
+         $total_amount = round(Cart::total());
+         $order_id = Order::insertGetId([
+            'user_id' =>Auth::id(),
+            'division_id' => $request->division_id,
+            'district_id' => $request->district_id,
+            'state_id' => $request->state_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'adress' => $request->address,
+            'post_code' => $request->post_code,
+            'notes' => $request->notes,
+
+            'payment_type' => 'Cash On Delivery',
+            'payment_method' => 'Cash On Delivery',
+
+            'currency' => 'Taka',
+            'amount' => $total_amount,
+
+
+            'invoice_no' => 'EOS'.mt_rand(10000000,99999999),
+            'order_date' => Carbon::now()->format('d F Y'),
+            'order_month' => Carbon::now()->format('F'),
+            'order_year' => Carbon::now()->format('Y'), 
+            'status' => 'pending',
+            'created_at' => Carbon::now(),  
+
+        ]);
+
+        $carts = Cart::content();
+        foreach($carts as $cart){
+            OderItem::insert([
+                'order_id' => $order_id,
+                'product_id' => $cart->id,
+                'qty' => $cart->qty,
+                'price' => $cart->price,
+                'created_at' =>Carbon::now(),
+            ]);
+        }//end foreach
+        Cart::destroy();
+        $notification = array (
+            'message' =>'Oder Place successfull',
+            'alert-type' =>'success'
+        );
+       
+        return redirect()->route('dashboard')->with($notification);
     }
 
 }

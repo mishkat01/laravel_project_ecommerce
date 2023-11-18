@@ -12,7 +12,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\Order;
-
+use App\Http\Controllers\Frontend\OderItem;
 
 
 
@@ -140,7 +140,7 @@ Route::post('/hcart/data/store/{id}',[CartController::class,'AddMiniCartHome']);
 Route::get('/checkout',[CartController::class,'CheckoutCreate'])->name('checkout');
 
 //cashon page route 
-Route::post('/order',[Order::class,'Order'])->name('order');
+Route::post('/order',[CartController::class,'Order'])->name('order');
 
 
 

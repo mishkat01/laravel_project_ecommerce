@@ -1,7 +1,8 @@
 @extends('frontend.master_dashboard')
 @section('main')
 
-
+<form method="post" action="{{ route('order')}}" >
+    @csrf
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
@@ -24,15 +25,15 @@
 
 <div class="row">
 <h4 class="mb-30">Billing Details</h4>
-<form method="post">
+
 
 
     <div class="row">
         <div class="form-group col-lg-6">
-            <input type="text" required="" name="shipping_name" value="{{Auth::user()->name}}">
+            <input type="text" required="" name="name" value="{{Auth::user()->name}}">
         </div>
         <div class="form-group col-lg-6">
-            <input type="email" required="" name="shipping_email" value="{{Auth::user()->email}}" >
+            <input type="text" required="" name="email" value="{{Auth::user()->email}}" >
         </div>
     </div>
 
@@ -40,30 +41,30 @@
 
                     <div class="row shipping_calculator">
                         <div class="form-group col-lg-6">
-                            <input type="email" required="" name="shipping_email" placeholder="enter divition" >
+                            <input type="text" required="" name="division_id" placeholder="enter division" >
                         </div>
                    
                         <div class="form-group col-lg-6">
-                            <input required="" type="text" name="city" value="{{Auth::user()->phone}}">
+                            <input required="" type="text" name="phone" value="{{Auth::user()->phone}}">
                         </div>
                     </div>
 
                      <div class="row shipping_calculator">
                         <div class="form-group col-lg-6">
-                            <input type="email" required="" name="shipping_email" placeholder="enter divition" >
+                            <input type="text" required="" name="district_id" placeholder="enter district" >
                         </div>
                         <div class="form-group col-lg-6">
-                            <input required="" type="text" name="city" placeholder="Post Code *">
+                            <input required="" type="text" name="post_code" placeholder="Post Code *">
                         </div>
                     </div>
 
 
                     <div class="row shipping_calculator">
                      <div class="form-group col-lg-6">
-                       <input type="email" required="" name="shipping_email" placeholder="enter divition" >
+                       <input type="text" required="" name="state_id" placeholder="enter divition" >
                        </div>
                         <div class="form-group col-lg-6">
-                            <input required="" type="text" name="city" value="{{Auth::user()->address}}">
+                            <input required="" type="text" name="address" value="{{Auth::user()->address}}">
                         </div>
                     </div>
 
@@ -72,12 +73,12 @@
 
 
                     <div class="form-group mb-30">
-                        <textarea rows="5" placeholder="Additional information"></textarea>
+                        <textarea rows="5" name="notes" placeholder="Additional information"></textarea>
                     </div>
 
 
 
-                </form>
+               
             </div>
         </div>
 
@@ -162,11 +163,12 @@
                     <img class="mr-15" src="assets/imgs/theme/icons/payment-master.svg" alt="">
                     <img src="assets/imgs/theme/icons/payment-zapper.svg" alt="">
                 </div>
-                <a href="#" class="btn btn-fill-out btn-block mt-30">Place an Order<i class="fi-rs-sign-out ml-15"></i></a>
+                <button class="btn btn-primary">Submit Payment</button>
             </div>
         </div>
     </div>
 </div>
+</form>
 
 
 
