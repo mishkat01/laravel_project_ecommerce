@@ -116,6 +116,11 @@ Route::controller(BrandController::class)->group(function(){
             Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
            
         });
+        // all admin order route
+        Route::controller(PlaceOrderController::class)->group(function(){
+            Route::get('/admin/order/details/{order_id}' , 'AdminOrderDetails')->name('admin.order.details');
+           
+        });
 
 });//end admin
 

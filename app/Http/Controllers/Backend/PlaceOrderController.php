@@ -18,4 +18,8 @@ class PlaceOrderController extends Controller
         $orders = Order::where('status','pending')->orderBy('id','DESC')->get();
         return view('backend.orders.pending_orders',compact('orders'));
     }
+
+    public function AdminOrderDetails(){
+        
+    }
 }
