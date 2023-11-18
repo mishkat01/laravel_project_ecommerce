@@ -63,7 +63,10 @@
 
                                         
                                         <h4>Total-> <span id="cartSubTotal"></span></h4>
+                                        <button><a href="{{ route('checkout')}}">proceed to checkout</a></button>
+
                                     </td>
+                                     
                                
                                     
                                   </tr>

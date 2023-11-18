@@ -36,7 +36,9 @@
                         <div class="row product-grid-4">
 
                         @foreach ($newProduct as $product)
-                            
+                        
+                      
+                     
                   
 
                             <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
@@ -81,7 +83,7 @@
                                         <div class="product-category">
                                             <a href="shop-grid-right.html">{{$product['category']['category_name']}}</a>
                                         </div>
-                                        <h2><a href="{{ url ('product/details/'.$product->id.'/'.$product->product_slug)}}">{{$product->product_name}}</a></h2>
+                                        <h2><a id="hname" href="{{ url ('product/details/'.$product->id.'/'.$product->product_slug)}}">{{$product->product_name}}</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 90%"></div>
@@ -105,8 +107,9 @@
                                             @endif
                                            
                                             <div class="add-cart">
-                                                <input type="hidden" id="product_id">
-                                                <a onclick="addToCart()" type="submit" class="add"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
+                                                <input type="text" id="hproduct_id" value="{{$product->id}}">
+                                                <input type="hidden" id="hqty" value=1>
+                                                <a onclick="addToCarthome()" type="submit" class="add"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
                                             </div>
                                         </div> 
                                     </div>

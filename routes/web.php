@@ -11,6 +11,9 @@ use App\Http\Controllers\Backend\ProductController;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\Order;
+
+
 
 
  
@@ -27,7 +30,7 @@ use App\Http\Controllers\Frontend\CartController;
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('home');
 
 
 
@@ -130,32 +133,49 @@ Route::get('/minicart/product/remove/{rowId}',[CartController::class,'RemoveMini
 //product details cart 
 Route::post('/dcart/data/store/{id}',[CartController::class,'AddMiniCartDetails']);
 
+//product home cart 
+Route::post('/hcart/data/store/{id}',[CartController::class,'AddMiniCartHome']);
+
+//chechout page route 
+Route::get('/checkout',[CartController::class,'CheckoutCreate'])->name('checkout');
+
+//cashon page route 
+Route::post('/order',[Order::class,'Order'])->name('order');
 
 
-Route::middleware(['auth','role:user'])->group(function() {
 
-   
-
-   
-   
- 
-   
     // Cart All Route 
-   Route::controller(CartController::class)->group(function(){
-       Route::get('/mycart' , 'MyCart')->name('myCart');
-       Route::get('/get-cart-product' , 'GetCartProduct');
-       Route::get('/cart-remove/{rowId}' , 'CartRemove');
-       Route::get('/cart-dec/{rowId}' , 'CartDec');
-       Route::get('/cart-inc/{rowId}' , 'CartInc');
+    Route::controller(CartController::class)->group(function(){
+        Route::get('/mycart' , 'MyCart')->name('myCart');
+        Route::get('/get-cart-product' , 'GetCartProduct');
+        Route::get('/cart-remove/{rowId}' , 'CartRemove');
+        Route::get('/cart-dec/{rowId}' , 'CartDec');
+        Route::get('/cart-inc/{rowId}' , 'CartInc');
+      
+        
+    
+    }); 
+
+
+
+// Route::middleware(['auth','role:user'])->group(function() {
+
+//     // Cart All Route 
+//    Route::controller(CartController::class)->group(function(){
+//        Route::get('/mycart' , 'MyCart')->name('myCart');
+//        Route::get('/get-cart-product' , 'GetCartProduct');
+//        Route::get('/cart-remove/{rowId}' , 'CartRemove');
+//        Route::get('/cart-dec/{rowId}' , 'CartDec');
+//        Route::get('/cart-inc/{rowId}' , 'CartInc');
      
        
    
-   }); 
+//    }); 
    
    
    
    
-   }); // end group User middleware
+//    }); // end group User middleware
 
 
 

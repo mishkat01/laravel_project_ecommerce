@@ -23,6 +23,8 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
 
+    <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
+
    
 
 
@@ -87,6 +89,31 @@
     <script src="{{ asset('frontend/assets/js/shop.js?v=5.3') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+
+    <script>
+       @if(Session::has('message'))
+       var type = "{{ Session::get('alert-type', 'info') }}"
+       switch (type) {
+         case 'info':
+           toastr.info(" {{ Session::get('message') }} ");
+           break;
+   
+         case 'success':
+           toastr.success(" {{ Session::get('message') }} ");
+           break;
+   
+         case 'warning':
+           toastr.warning(" {{ Session::get('message') }} ");
+           break;
+   
+         case 'error':
+           toastr.error(" {{ Session::get('message') }} ");
+           break;
+       }
+       @endif
+     </script>
+
     <script>
         $.ajaxSetup({
             headers:{
@@ -127,7 +154,7 @@
         }
         //End product view with model 
 
-        //start product view with model
+        //start product view cart with model
       function  addToCart(){
         var product_name= $('#pname').text();
         var id= $('#product_id').val();
@@ -143,6 +170,55 @@
             success:function(data){
                 miniCart();
                 $('#closeModal').click();
+                // console.log(data)
+
+                //start message
+                const Toast = Swal.mixin({
+                    toast:true,
+                    position: "top-end",
+                    icon: "success",
+                    
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                if($.isEmptyObject(data.error)){
+                    Toast.fire({
+                    
+                    type: "success",
+                    title: data.success,
+                  
+                    });
+                }else{
+                    Toast.fire({
+                    
+                    type: "error",
+                    title: data.error,
+                  
+                    });
+                        
+                    }
+                //end message
+            }
+        })
+
+      }
+
+           //start product view cart with model
+           function  addToCarthome(){
+        var product_name= $('#hname').text();
+        var id= $('#hproduct_id').val();
+        var qty= $('#hqty').val();
+        $.ajax({
+            type:"POST",
+            dataType : 'json',
+            data : {
+                qty:qty,
+                product_name:product_name,
+            },
+            url : "/hcart/data/store/"+id,
+            success:function(data){
+                miniCart();
+                
                 // console.log(data)
 
                 //start message
