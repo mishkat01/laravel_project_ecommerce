@@ -19,8 +19,7 @@
                
                 <!-- MAIN SLIDES -->
                
-                <div class="product-image-slider" style="
-                width: 302px;float:right">
+                <div class="product-image-slider">
                     @foreach ($multiImage as $img)
                     <figure class="border-radius-10">
                         <img src="{{asset($img->photo_name)}}" alt="product image" />
@@ -47,7 +46,7 @@
             </div>
             <!-- End Gallery -->
         </div>
-        <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="col-md-6 col-sm-12 col-xs-12" >
             <div class="detail-info pr-30 pl-30">
                 @if ($product->product_qty > 0)
                 <span class="stock-status in-stock"> In Stock </span>
