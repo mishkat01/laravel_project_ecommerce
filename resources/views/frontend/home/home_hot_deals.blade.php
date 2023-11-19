@@ -16,7 +16,7 @@
     }
 </style>
 @php
-    $newProduct = App\Models\Product::where('status', 1)
+    $newProduct = App\Models\Product::where('hot_deals', 1)
         ->orderBy('id', 'ASC')
         ->limit(10)
         ->get();
@@ -25,7 +25,7 @@
 <section class="product-tabs section-padding position-relative">
     <div class="container">
         <div class="section-title style-2 wow animate__animated animate__fadeIn">
-            <div class="heading-box">New Product</div>
+            <div class="heading-box">Hot Deals</div>
 
             <div class="heading-line"></div>
 
@@ -51,8 +51,8 @@
                                     </div>
                                     <div class="product-action-1"
                                         style="
-                                        width: 42px;
-                                    ">
+                                      width: 42px;
+                                  ">
                                         <ul>
                                             <li><a aria-label="Add To Wishlist" class="action-btn"
                                                     href="shop-wishlist.html"><i class="fi-rs-heart"></i></a></li>
@@ -97,8 +97,8 @@
                                         <span class="font-small ml-5 text-muted"> (4.0)</span>
                                     </div>
                                     {{-- <div>
-                                            <span class="font-small text-muted">By <a href="vendor-details-1.html">Intel</a></span>
-                                        </div> --}}
+                                          <span class="font-small text-muted">By <a href="vendor-details-1.html">Intel</a></span>
+                                      </div> --}}
                                     <div class="product-card-bottom">
                                         @if ($product->discount_price == null)
                                             <div class="product-price">

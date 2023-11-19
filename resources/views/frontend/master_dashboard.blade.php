@@ -8,7 +8,7 @@
     <meta name="description" content="" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
- 
+
 
 
 
@@ -17,15 +17,16 @@
     <meta property="og:type" content="" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
-    <!-- Favicon -->  
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://www.ryanscomputers.com/assets/images/favicon.ico" type="image/x-icon">
     <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/imgs/theme/favicon.svg') }}" /> -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-xxx" crossorigin="anonymous" />
 
     <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
 
-   
+
 
 
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/animate.min.css') }}" />
@@ -36,22 +37,22 @@
     <!-- Modal -->
 
     <!-- Quick view -->
-    @include("frontend.body.quickview")
+    @include('frontend.body.quickview')
 
     <!-- Header  -->
-    
-@include("frontend.body.header")
-   
+
+    @include('frontend.body.header')
+
     <!--End header-->
 
- <main class="main">
+    <main class="main">
         @yield('main')
 
     </main>
-@include("frontend.body.footer")
+    @include('frontend.body.footer')
 
 
-   
+
     <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -92,62 +93,62 @@
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 
     <script>
-       @if(Session::has('message'))
-       var type = "{{ Session::get('alert-type', 'info') }}"
-       switch (type) {
-         case 'info':
-           toastr.info(" {{ Session::get('message') }} ");
-           break;
-   
-         case 'success':
-           toastr.success(" {{ Session::get('message') }} ");
-           break;
-   
-         case 'warning':
-           toastr.warning(" {{ Session::get('message') }} ");
-           break;
-   
-         case 'error':
-           toastr.error(" {{ Session::get('message') }} ");
-           break;
-       }
-       @endif
-     </script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
 
     <script>
         $.ajaxSetup({
-            headers:{
-                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         })
 
-        function productView(id){
+        function productView(id) {
             // alert(id);
             $.ajax({
-                type:'GET',
-                url:'/product/view/model/'+id,
-                dataType:'json',
-                success:function(data){
+                type: 'GET',
+                url: '/product/view/model/' + id,
+                dataType: 'json',
+                success: function(data) {
                     // console.log(data)
                     $('#pname').text(data.product.product_name);
                     $('#pprice').text(data.product.discount_price);
                     $('#oldprice').text(data.product.selling_price);
                     $('#pcode').text(data.product.product_code);
-                    $('#pimage').attr('src','/'+data.product.product_thambnail);
+                    $('#pimage').attr('src', '/' + data.product.product_thambnail);
                     $('#pstock').text(data.product.product_qty);
 
                     $('#product_id').val(id);
                     $('#qty').val(1);
 
-                    if(data.product.discount_price==null){
+                    if (data.product.discount_price == null) {
                         $('#pprice').text('');
                         $('#oldprice').text('');
                         $('#pprice').text(data.product.selling_price);
-                    }else{
+                    } else {
                         $('#pprice').text(data.product.selling_price);
                         $('#oldprice').text(data.product.selling_price);
                     }
-                   
+
 
                 }
             })
@@ -155,172 +156,171 @@
         //End product view with model 
 
         //start product view cart with model
-      function  addToCart(){
-        var product_name= $('#pname').text();
-        var id= $('#product_id').val();
-        var qty= $('#qty').val();
-        $.ajax({
-            type:"POST",
-            dataType : 'json',
-            data : {
-                qty:qty,
-                product_name:product_name,
-            },
-            url : "/cart/data/store/"+id,
-            success:function(data){
-                miniCart();
-                $('#closeModal').click();
-                // console.log(data)
+        function addToCart() {
+            var product_name = $('#pname').text();
+            var id = $('#product_id').val();
+            var qty = $('#qty').val();
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    qty: qty,
+                    product_name: product_name,
+                },
+                url: "/cart/data/store/" + id,
+                success: function(data) {
+                    miniCart();
+                    $('#closeModal').click();
+                    // console.log(data)
 
-                //start message
-                const Toast = Swal.mixin({
-                    toast:true,
-                    position: "top-end",
-                    icon: "success",
-                    
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                    
-                    type: "success",
-                    title: data.success,
-                  
-                    });
-                }else{
-                    Toast.fire({
-                    
-                    type: "error",
-                    title: data.error,
-                  
-                    });
-                        
+                    //start message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        icon: "success",
+
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                    if ($.isEmptyObject(data.error)) {
+                        Toast.fire({
+
+                            type: "success",
+                            title: data.success,
+
+                        });
+                    } else {
+                        Toast.fire({
+
+                            type: "error",
+                            title: data.error,
+
+                        });
+
                     }
-                //end message
-            }
-        })
+                    //end message
+                }
+            })
 
-      }
+        }
 
-           //start product view cart with model
-           function  addToCarthome(){
-        var product_name= $('#hname').text();
-        var id= $('#hproduct_id').val();
-        var qty= $('#hqty').val();
-        $.ajax({
-            type:"POST",
-            dataType : 'json',
-            data : {
-                qty:qty,
-                product_name:product_name,
-            },
-            url : "/hcart/data/store/"+id,
-            success:function(data){
-                miniCart();
-                
-                // console.log(data)
+        //start product view cart with model
+        function addToCarthome(id) {
+            var product_name = $('#hname').text();
+            console.log(id);
+            // var id = $('#hproduct_id').val();
+            var qty = $('#hqty').val();
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    qty: qty,
+                    product_name: product_name,
+                },
+                url: "/hcart/data/store/" + id,
+                success: function(data) {
+                    miniCart();
 
-                //start message
-                const Toast = Swal.mixin({
-                    toast:true,
-                    position: "top-end",
-                    icon: "success",
-                    
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                    
-                    type: "success",
-                    title: data.success,
-                  
-                    });
-                }else{
-                    Toast.fire({
-                    
-                    type: "error",
-                    title: data.error,
-                  
-                    });
-                        
+                    // console.log(data)
+
+                    //start message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        icon: "success",
+
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                    if ($.isEmptyObject(data.error)) {
+                        Toast.fire({
+
+                            type: "success",
+                            title: data.success,
+
+                        });
+                    } else {
+                        Toast.fire({
+
+                            type: "error",
+                            title: data.error,
+
+                        });
+
                     }
-                //end message
-            }
-        })
+                    //end message
+                }
+            })
 
-      }
+        }
 
 
-          //start product Details add to cart
-          function  addToCartDetails(){
-        var product_name= $('#dpname').text();
-        var id= $('#dproduct_id').val();
-        var qty= $('#dqty').val();
-        $.ajax({
-            type:"POST",
-            dataType : 'json',
-            data : {
-                qty:qty,
-                product_name:product_name,
-            },
-            url : "/dcart/data/store/"+id,
-            success:function(data){
-                miniCart();
-               
-                // console.log(data)
+        //start product Details add to cart
+        function addToCartDetails() {
+            var product_name = $('#dpname').text();
+            var id = $('#dproduct_id').val();
+            var qty = $('#dqty').val();
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    qty: qty,
+                    product_name: product_name,
+                },
+                url: "/dcart/data/store/" + id,
+                success: function(data) {
+                    miniCart();
 
-                //start message
-                const Toast = Swal.mixin({
-                    toast:true,
-                    position: "top-end",
-                    icon: "success",
-                    
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                    
-                    type: "success",
-                    title: data.success,
-                  
-                    });
-                }else{
-                    Toast.fire({
-                    
-                    type: "error",
-                    title: data.error,
-                  
-                    });
-                        
+                    // console.log(data)
+
+                    //start message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        icon: "success",
+
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                    if ($.isEmptyObject(data.error)) {
+                        Toast.fire({
+
+                            type: "success",
+                            title: data.success,
+
+                        });
+                    } else {
+                        Toast.fire({
+
+                            type: "error",
+                            title: data.error,
+
+                        });
+
                     }
-                //end message
-            }
-        })
+                    //end message
+                }
+            })
 
-      }//end details cart
-
+        } //end details cart
     </script>
 
-<script type="text/javascript">
-    
-    function miniCart(){
-       $.ajax({
-           type: 'GET',
-           url: '/product/mini/cart',
-           dataType: 'json',
-           success:function(response){
-               console.log(response)
-            $('#cartQty').text(response.cartQty)
-            
-            $('span[id="cartSubTotal"]').text(response.cartTotal)
-   
-           var miniCart = ""
-   
-           $.each(response.carts, function(key,value){
-              miniCart += ` 
+    <script type="text/javascript">
+        function miniCart() {
+            $.ajax({
+                type: 'GET',
+                url: '/product/mini/cart',
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response)
+                    $('#cartQty').text(response.cartQty)
+
+                    $('span[id="cartSubTotal"]').text(response.cartTotal)
+
+                    var miniCart = ""
+
+                    $.each(response.carts, function(key, value) {
+                        miniCart += ` 
               <br>
               <ul>
                <li>
@@ -337,73 +337,71 @@
                </li> 
            </ul>
             
-                  `  
-             });
-   
-               $('#miniCart').html(miniCart);
-   
-           }
-   
-       })
-    }
-     miniCart();
-   //Mini Cart remove start 
-    function miniCartRemove(rowId){
-        $.ajax({
-            type:"GET",
-            url:'/minicart/product/remove/'+rowId,
-            dataType: 'json',
-            success: function(data){
-                miniCart()
-                  //start message
-                  const Toast = Swal.mixin({
-                    toast:true,
-                    position: "top-end",
-                    icon: "success",
-                    
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                    
-                    type: "success",
-                    title: data.success,
-                  
+                  `
                     });
-                }else{
-                    Toast.fire({
-                    
-                    type: "error",
-                    title: data.error,
-                  
-                    });
-                        
+
+                    $('#miniCart').html(miniCart);
+
+                }
+
+            })
+        }
+        miniCart();
+        //Mini Cart remove start 
+        function miniCartRemove(rowId) {
+            $.ajax({
+                type: "GET",
+                url: '/minicart/product/remove/' + rowId,
+                dataType: 'json',
+                success: function(data) {
+                    miniCart()
+                    //start message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        icon: "success",
+
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                    if ($.isEmptyObject(data.error)) {
+                        Toast.fire({
+
+                            type: "success",
+                            title: data.success,
+
+                        });
+                    } else {
+                        Toast.fire({
+
+                            type: "error",
+                            title: data.error,
+
+                        });
+
                     }
-                //end message
-            }
-        })
-    }
-   //remove end
-   
-   </script>
+                    //end message
+                }
+            })
+        }
+        //remove end
+    </script>
 
-{{-- load my cart --}}
-   <script>
+    {{-- load my cart --}}
+    <script>
+        function cart() {
+            $.ajax({
+                type: 'GET',
+                url: '/get-cart-product',
+                dataType: 'json',
+                success: function(response) {
+                    // console.log(response)
 
-function cart(){
-       $.ajax({
-           type: 'GET',
-           url: '/get-cart-product',
-           dataType: 'json',
-           success:function(response){
-               // console.log(response)
-          
-   
-           var rows = ""
-   
-           $.each(response.carts, function(key,value){
-            rows += ` 
+
+                    var rows = ""
+
+                    $.each(response.carts, function(key, value) {
+                        rows += ` 
                         <tr class="pt-30">
                         <td class="custome-checkbox pl-30">
 
@@ -444,68 +442,68 @@ function cart(){
                                 
                         </tr>
 
-                  `  
-             });
-   
-               $('#cartPage').html(rows);
-   
-           }
-   
-       })
-    }
-    cart();
+                  `
+                    });
 
-     // Cart remove start 
-     function cartRemove(rowId){
-        $.ajax({
-            type:'GET',
-            url:'/cart-remove/'+rowId,
-            dataType: 'json',
-            success: function(data){
-                cart()
-                miniCart()
-                  //start message
-                  const Toast = Swal.mixin({
-                    toast:true,
-                    position: "top-end",
-                    icon: "success",
-                    
-                    showConfirmButton: false,
-                    timer: 1000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                    
-                    type: "success",
-                    title: data.success,
-                  
-                    });
-                }else{
-                    Toast.fire({
-                    
-                    type: "error",
-                    title: data.error,
-                  
-                    });
-                        
+                    $('#cartPage').html(rows);
+
+                }
+
+            })
+        }
+        cart();
+
+        // Cart remove start 
+        function cartRemove(rowId) {
+            $.ajax({
+                type: 'GET',
+                url: '/cart-remove/' + rowId,
+                dataType: 'json',
+                success: function(data) {
+                    cart()
+                    miniCart()
+                    //start message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        icon: "success",
+
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                    if ($.isEmptyObject(data.error)) {
+                        Toast.fire({
+
+                            type: "success",
+                            title: data.success,
+
+                        });
+                    } else {
+                        Toast.fire({
+
+                            type: "error",
+                            title: data.error,
+
+                        });
+
                     }
-                //end message
-            }
-        })
-    }
-    
+                    //end message
+                }
+            })
+        }
+
         //remove end
 
         //cartdecc
-        function cartDec(rowId){
+        function cartDec(rowId) {
             $.ajax({
-                type:'GET',
-                url:'/cart-dec/'+rowId,
+                type: 'GET',
+                url: '/cart-dec/' + rowId,
                 dataType: 'json',
-                success: function(data){
+                success: function(data) {
                     cart()
                     miniCart()
-                    
+
                 }
             })
         }
@@ -513,19 +511,19 @@ function cart(){
 
         //cartinc
 
-        function cartInc(rowId){
+        function cartInc(rowId) {
             $.ajax({
-                type:'GET',
-                url:'/cart-inc/'+rowId,
+                type: 'GET',
+                url: '/cart-inc/' + rowId,
                 dataType: 'json',
-                success: function(data){
+                success: function(data) {
                     cart()
                     miniCart()
-                    
+
                 }
             })
         }
-   </script>
+    </script>
 
 
 

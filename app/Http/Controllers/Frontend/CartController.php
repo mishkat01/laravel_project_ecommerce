@@ -194,7 +194,9 @@ class CartController extends Controller
     }
 
     public function Order(Request $request){
-         $total_amount = round(Cart::total());
+        $string =Cart::total();
+        $integer = (int) $string;
+         $total_amount = round($integer);
          $order_id = Order::insertGetId([
             'user_id' =>Auth::id(),
             'division_id' => $request->division_id,
