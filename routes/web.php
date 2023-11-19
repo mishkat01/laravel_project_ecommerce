@@ -123,6 +123,7 @@ Route::controller(BrandController::class)->group(function(){
 
         Route::controller(PlaceOrderController::class)->group(function(){
             Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
+            Route::get('/deliverd/order' , 'deliverdOrder')->name('deliverd.order');
             Route::get('/admin/order/details/{order_id}' , 'AdminOrderDetails')->name('admin.order.details');
            
         });
