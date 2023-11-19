@@ -207,7 +207,7 @@
         //start product view cart with model
         function addToCarthome(id) {
             var product_name = $('#hname').text();
-            console.log(id);
+
             // var id = $('#hproduct_id').val();
             var qty = $('#hqty').val();
             $.ajax({
