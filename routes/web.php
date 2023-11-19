@@ -4,11 +4,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\PlaceOrderController;
+use App\Http\Controllers\Backend\AdminStatus;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
@@ -66,6 +68,12 @@ Route::middleware(['auth'])->group(function(){
 
 
 Route::middleware(['auth','role:admin'])->group(function(){
+    // status
+    Route::get('/admin/deliverd/{order_id}',[AdminStatus::class,'ConfrimToDeliver'])->name('confirm-deliverd');
+
+      // invoice
+      Route::get('/admin/invoice/download/{order_id}',[AdminStatus::class,'AdminInvoiceDownload'])->name('admin.invoice.download');
+    
 
      //MY brands
 Route::controller(BrandController::class)->group(function(){
@@ -115,13 +123,14 @@ Route::controller(BrandController::class)->group(function(){
 
         Route::controller(PlaceOrderController::class)->group(function(){
             Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
-           
-        });
-        // all admin order route
-        Route::controller(PlaceOrderController::class)->group(function(){
             Route::get('/admin/order/details/{order_id}' , 'AdminOrderDetails')->name('admin.order.details');
            
         });
+        // all admin order route
+       
+        
+           
+        
 
 });//end admin
 
@@ -170,24 +179,15 @@ Route::post('/order',[CartController::class,'Order'])->name('order');
 
 
 
-// Route::middleware(['auth','role:user'])->group(function() {
+Route::middleware(['auth','role:user'])->group(function() {
 
-//     // Cart All Route 
-//    Route::controller(CartController::class)->group(function(){
-//        Route::get('/mycart' , 'MyCart')->name('myCart');
-//        Route::get('/get-cart-product' , 'GetCartProduct');
-//        Route::get('/cart-remove/{rowId}' , 'CartRemove');
-//        Route::get('/cart-dec/{rowId}' , 'CartDec');
-//        Route::get('/cart-inc/{rowId}' , 'CartInc');
-     
-       
-   
-//    }); 
+    // order details
+    Route::get('/user/order/order_details/{order_id} ',[UserController::class,'UserOrderDetails']);
    
    
    
    
-//    }); // end group User middleware
+   }); // end group User middleware
 
 
 

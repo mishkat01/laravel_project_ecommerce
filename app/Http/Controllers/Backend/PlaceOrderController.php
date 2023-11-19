@@ -19,7 +19,9 @@ class PlaceOrderController extends Controller
         return view('backend.orders.pending_orders',compact('orders'));
     }
 
-    public function AdminOrderDetails(){
-        
-    }
+    public function AdminOrderDetails($order_id){
+        $order = Order::where('id',$order_id)->first();
+        $orderItem = OderItem::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
+        return view('backend.orders.admin_order_details',compact('order','orderItem'));
+}
 }
