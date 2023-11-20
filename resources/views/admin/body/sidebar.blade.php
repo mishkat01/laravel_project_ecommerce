@@ -66,6 +66,7 @@
             <ul class="sidebar-submenu">
                 <li><a href="{{ route('pending.order') }}"><i class="zmdi zmdi-star-outline"></i>Pending Order</a></li>
                 <li><a href="{{ route('deliverd.order') }}"><i class="zmdi zmdi-star-outline"></i>deliverd Order</a>
+                <li><a href="{{ route('complete.order') }}"><i class="zmdi zmdi-star-outline"></i>Order Complete</a>
                 </li>
 
 

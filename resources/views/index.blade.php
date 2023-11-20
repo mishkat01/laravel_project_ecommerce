@@ -87,14 +87,31 @@
                                                                         <span class="badge bg-warning">pending</span>
                                                                     @elseif($item->status == 'deliverd')
                                                                         <span class="badge bg-success">deliverd</span>
+                                                                    @elseif($item->status == 'recived')
+                                                                        <span class="badge bg-success">recived</span>
                                                                     @endif
 
 
                                                                 </td>
-                                                                <td><a href="{{ url('user/order/order_details/' . $item->id) }}"
-                                                                        class="btn-small d-block"><i
-                                                                            class="fa fa-eye"></i>View</a>
-                                                                </td>
+                                                                @if ($item->status == 'deliverd')
+                                                                    <td><a href="{{ url('user/order/order_details/' . $item->id) }}"
+                                                                            class="btn-small d-block"><i
+                                                                                class="fa fa-eye"></i>View</a>
+                                                                    </td>
+
+                                                                    <td><a href="{{ url('user/recived/' . $item->id) }}"
+                                                                            class="btn-small d-block"><i
+                                                                                class="fa fa-eye"></i>Recived</a>
+                                                                    </td>
+                                                                @else
+                                                                    <td><a href="{{ url('user/order/order_details/' . $item->id) }}"
+                                                                            class="btn-small d-block"><i
+                                                                                class="fa fa-eye"></i>View</a>
+                                                                    </td>
+                                                                @endif
+
+
+
                                                             </tr>
                                                         @endforeach
                                                     </tbody>

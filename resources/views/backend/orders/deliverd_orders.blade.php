@@ -4,11 +4,11 @@
         <!-- Breadcrumb-->
         <div class="row pt-2 pb-2">
             <div class="col-sm-9">
-                <h4 class="page-title">All Category</h4>
+                <h4 class="page-title">Deliverd</h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javaScript:void();">dashbord</a></li>
-                    <li class="breadcrumb-item"><a href="javaScript:void();">Tables</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">All Category</li>
+                    <li class="breadcrumb-item"><a href="javaScript:void();">order</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Deliverd</li>
                 </ol>
             </div>
             <div class="col-sm-3">
@@ -43,7 +43,8 @@
                                             <td>{{ $item->invoice_no }}</td>
                                             <td>${{ $item->amount }}</td>
                                             <td>{{ $item->payment_method }}</td>
-                                            <td> <span class="badge rounded-pill bg-success"> {{ $item->status }}</span>
+                                            <td> <span class="badge rounded-pill bg-danger" style="color: black">
+                                                    {{ $item->status }}</span>
                                             </td>
 
                                             <td>

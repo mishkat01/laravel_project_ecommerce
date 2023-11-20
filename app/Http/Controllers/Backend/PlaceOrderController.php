@@ -23,6 +23,10 @@ class PlaceOrderController extends Controller
         $orders = Order::where('status','deliverd')->orderBy('id','DESC')->get();
         return view('backend.orders.deliverd_orders',compact('orders'));
     }
+    public function completeOrder()  {
+        $orders = Order::where('status','recived')->orderBy('id','DESC')->get();
+        return view('backend.orders.deliverd_orders',compact('orders'));
+    }
 
     public function AdminOrderDetails($order_id){
         $order = Order::where('id',$order_id)->first();

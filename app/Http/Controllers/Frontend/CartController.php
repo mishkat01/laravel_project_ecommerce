@@ -194,9 +194,14 @@ class CartController extends Controller
     }
 
     public function Order(Request $request){
-        $string =Cart::total();
-        $integer = (int) $string;
-         $total_amount = round($integer);
+        $string_decimal =Cart::total();
+        $string_decimal_without_commas = str_replace(",", "", $string_decimal);
+        $float_number = floatval($string_decimal_without_commas);
+        $integer_number = intval($float_number);
+
+        // $string =Cart::total();
+        // $integer = (int) $string;
+         $total_amount = round($integer_number);
          $order_id = Order::insertGetId([
             'user_id' =>Auth::id(),
             'division_id' => $request->division_id,

@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\Order;
 use App\Http\Controllers\Frontend\OderItem;
+use App\Http\Controllers\User\UserStatus;
 
 
 
@@ -70,6 +71,8 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth','role:admin'])->group(function(){
     // status
     Route::get('/admin/deliverd/{order_id}',[AdminStatus::class,'ConfrimToDeliver'])->name('confirm-deliverd');
+    
+    // Route::get('/admin/deliverd/{order_id}',[AdminStatus::class,'ConfrimToDeliver'])->name('complete.order');
 
       // invoice
       Route::get('/admin/invoice/download/{order_id}',[AdminStatus::class,'AdminInvoiceDownload'])->name('admin.invoice.download');
@@ -124,6 +127,7 @@ Route::controller(BrandController::class)->group(function(){
         Route::controller(PlaceOrderController::class)->group(function(){
             Route::get('/pending/order' , 'PendingOrder')->name('pending.order');
             Route::get('/deliverd/order' , 'deliverdOrder')->name('deliverd.order');
+             Route::get('/complete/order','completeOrder')->name('complete.order');
             Route::get('/admin/order/details/{order_id}' , 'AdminOrderDetails')->name('admin.order.details');
            
         });
@@ -184,6 +188,9 @@ Route::middleware(['auth','role:user'])->group(function() {
 
     // order details
     Route::get('/user/order/order_details/{order_id} ',[UserController::class,'UserOrderDetails']);
+
+    // userStatus
+    Route::get('/user/recived/{order_id}',[UserStatus::class,'DeliveToRecived'])->name('deliverd-recived');
    
    
    
