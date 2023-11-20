@@ -40,8 +40,8 @@
                     <div class="card-body">
                         <div class="media align-items-center">
                             <div class="media-body">
-                                <p class="text-white">Pending Order</p>
-                                <h4 class="text-white line-height-5"></h4>
+                                <p class="text-white">revenue</p>
+                                <h4 class="text-white line-height-5">{{ $total }}</h4>
                             </div>
                             <div class="w-circle-icon rounded-circle border border-white">
                                 <i class="fa fa-users text-white"></i>
@@ -55,8 +55,8 @@
                     <div class="card-body">
                         <div class="media align-items-center">
                             <div class="media-body">
-                                <p class="text-white">Recived Order</p>
-                                <h4 class="text-white line-height-5"></h4>
+                                <p class="text-white">pending Order</p>
+                                <h4 class="text-white line-height-5">{{ $order_pending }}</h4>
                             </div>
                             <div class="w-circle-icon rounded-circle border border-white">
                                 <i class="fa fa-pie-chart text-white"></i>
