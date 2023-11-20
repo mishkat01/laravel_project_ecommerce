@@ -15,12 +15,13 @@ class AdminController extends Controller
     public function AdminDashboard(){
         $order_count = Order::count();
         $user_count = User::count();
-        $order_pending = Order::where('status', 'pending')->count();
+        // $order_pending = Order::where('status', 'pending')->count();
+        // $all_total = Order::
 
-        $order_recived = Order::where('status', 'recived')->count();;
+        // $order_recived = Order::where('status', 'recived')->count();;
         $all_order = Order::orderBy('id','DESC')->get();
 
-        return view ('admin.index',compact('order_count','user_count','order_pending','order_recived','all_order'));
+        return view ('admin.index',compact('user_count','all_order','order_count'));
     }
     public function AdminDestroy(Request $request): RedirectResponse
     {

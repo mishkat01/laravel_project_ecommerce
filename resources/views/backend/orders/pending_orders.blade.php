@@ -41,9 +41,11 @@
                                             <td> {{ $key + 1 }} </td>
                                             <td>{{ $item->order_date }}</td>
                                             <td>{{ $item->invoice_no }}</td>
+
                                             <td>${{ $item->amount }}</td>
                                             <td>{{ $item->payment_method }}</td>
-                                            <td> <span class="badge rounded-pill bg-success"> {{ $item->status }}</span>
+                                            <td> <span class="badge rounded-pill bg-danger" style="color: aliceblue">
+                                                    {{ $item->status }}</span>
                                             </td>
 
                                             <td>

@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><i class="fa fa-table"></i> All pending Order</div>
+                    <div class="card-header"><i class="fa fa-table"></i> All recived Order</div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="default-datatable" class="table table-bordered">
@@ -39,20 +39,19 @@
                                     @foreach ($orders as $key => $item)
                                         <tr>
                                             <td> {{ $key + 1 }} </td>
+
                                             <td>{{ $item->order_date }}</td>
                                             <td>{{ $item->invoice_no }}</td>
                                             <td>${{ $item->amount }}</td>
                                             <td>{{ $item->payment_method }}</td>
-                                            <td> <span class="badge rounded-pill bg-success" style="color: green"!important>
+                                            <td> <span class="badge rounded-pill bg-success">
                                                     {{ $item->status }}</span>
                                             </td>
 
                                             <td>
                                                 <a href="{{ route('admin.order.details', $item->id) }} "
                                                     class="btn btn-info" title="Details"><i class="fa fa-eye"></i> </a>
-                                                {{-- <a href="{{ route('admin.invoice.download', $item->id) }} "
-                                                    class="btn btn-danger" title="Invoice PDF"><i class="fa fa-eye"></i>
-                                                </a> --}}
+
 
 
                                             </td>

@@ -168,7 +168,17 @@
                             <img class="mr-15" src="assets/imgs/theme/icons/payment-master.svg" alt="">
                             <img src="assets/imgs/theme/icons/payment-zapper.svg" alt="">
                         </div>
-                        <button class="btn btn-primary">Submit Payment</button>
+                        <button
+                            style="  background-color: #04AA6D; /* Green */
+                        border: none;
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;">Submit
+                            Payment</button>
                     </div>
                 </div>
             </div>

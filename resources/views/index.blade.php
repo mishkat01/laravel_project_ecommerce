@@ -94,19 +94,49 @@
 
                                                                 </td>
                                                                 @if ($item->status == 'deliverd')
-                                                                    <td><a href="{{ url('user/order/order_details/' . $item->id) }}"
-                                                                            class="btn-small d-block"><i
-                                                                                class="fa fa-eye"></i>View</a>
+                                                                    <td><button
+                                                                            style="  background-color: #04AA6D; /* Green */
+                                                                        border: none;
+                                                                        color: white;
+                                                                        text-align: center;
+                                                                        text-decoration: none;
+                                                                        display: inline-block;
+                                                                        font-size: 16px;
+                                                                        margin: 4px 2px;
+                                                                        cursor: pointer;"><a
+                                                                                href="{{ url('user/order/order_details/' . $item->id) }}"
+                                                                                class="btn-small d-block"><i
+                                                                                    class="fa fa-eye"></i>View</a></button>
                                                                     </td>
 
-                                                                    <td><a href="{{ url('user/recived/' . $item->id) }}"
-                                                                            class="btn-small d-block"><i
-                                                                                class="fa fa-eye"></i>Recived</a>
+                                                                    <td><button
+                                                                            style="  background-color: rgb(178, 178, 248); /* Green */
+                                                            border: round;
+                                                            color: white;
+                                                            text-align: center;
+                                                            text-decoration: none;
+                                                            display: inline-block;
+                                                            font-size: 16px;
+                                                            margin: 4px 2px;
+                                                            cursor: pointer;"><a
+                                                                                href="{{ url('user/recived/' . $item->id) }}"
+                                                                                class="btn-small d-block"><i
+                                                                                    class="fa fa-eye"></i>Recived</a>
                                                                     </td>
                                                                 @else
-                                                                    <td><a href="{{ url('user/order/order_details/' . $item->id) }}"
-                                                                            class="btn-small d-block"><i
-                                                                                class="fa fa-eye"></i>View</a>
+                                                                    <td><button
+                                                                            style="  background-color: #04AA6D; /* Green */
+                                                                border: round;
+                                                                color: white;
+                                                                text-align: center;
+                                                                text-decoration: none;
+                                                                display: inline-block;
+                                                                font-size: 16px;
+                                                                margin: 4px 2px;
+                                                                cursor: pointer;"><a
+                                                                                href="{{ url('user/order/order_details/' . $item->id) }}"
+                                                                                class="btn-small d-block"><i
+                                                                                    class="fa fa-eye"></i>View</a></button>
                                                                     </td>
                                                                 @endif
 

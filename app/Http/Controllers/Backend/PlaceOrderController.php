@@ -25,7 +25,7 @@ class PlaceOrderController extends Controller
     }
     public function completeOrder()  {
         $orders = Order::where('status','recived')->orderBy('id','DESC')->get();
-        return view('backend.orders.deliverd_orders',compact('orders'));
+        return view('backend.orders.complete_order',compact('orders'));
     }
 
     public function AdminOrderDetails($order_id){
